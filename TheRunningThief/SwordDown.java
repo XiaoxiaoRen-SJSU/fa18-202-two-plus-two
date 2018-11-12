@@ -45,8 +45,10 @@ public class SwordDown extends Actor implements IButtonEventObserver {
         }
         
         if (isAtEdge()) {
-            getWorld().removeObject(this);
+            //getWorld().removeObject(this);
+            setLocation(getX(), 10);
         }
+
     }
     
 }
