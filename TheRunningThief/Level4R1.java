@@ -65,7 +65,7 @@ public class Level4R1 extends GamePage {
         addObject(diamond9,1050,650);
         addObject(diamond10,1050,500);
 
-        setPaintOrder(Thief.class, Diamond.class, RedButton.class);
+        setPaintOrder(Thief.class, SwordDown.class,Diamond.class, RedButton.class);
     }
     
     
