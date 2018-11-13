@@ -127,6 +127,16 @@ public class Thief extends Actor {
             
             this.setLocation(136,630);
         }
+
+        // Add by Min Lu. Check if the thief touch SwordUp.
+        if (isTouching(SwordUp.class)) {
+            lives--;
+            
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200);
+            
+            this.setLocation(136,630);
+        }
     }
     
     // Create by Xiaoxiao Ren. Check if the actor should move and direction of movement.
