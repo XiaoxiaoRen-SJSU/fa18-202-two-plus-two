@@ -32,7 +32,8 @@
 ## Week 2
 
 * What tasks I worked on:
-
+   * Implement Level 1 code.
+   * Implement success page code.
 * What I plan to work on next:
 
 * What tasks are blocked waiting on another team member:
