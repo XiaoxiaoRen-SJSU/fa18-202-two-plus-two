@@ -23,15 +23,17 @@ public class SuccessPage extends GamePage {
     }
     
     public void prepare() {
-        EndingTitle endingtitle = new EndingTitle();
-        addObject(endingtitle, 600, 127);
+        YouWin youwin = new YouWin();
+        addObject(youwin, 600, 227);
         
         Score score = new Score(Integer.toString(thief.countOfDiamond));
-        addObject(score, 600, 227);
+        addObject(score, 600, 277);
         
         TryAgainButton tryAgainButton = new TryAgainButton();
         tryAgainButton.setCommand(replayGame);
         addObject(tryAgainButton, 1000, 675);
+
+        addObject(thief,136,430);
     }
     
     private void setReceiverReplayGame() {
