@@ -23,20 +23,20 @@ public class Level1R1 extends GamePage {
         Points points = new Points();
         addObject(points,817,28);
         
-        SwordDown swordDown1 = new SwordDown(false, 1, 0, 1200);
-        SwordDown swordDown2 = new SwordDown(false, 1, 0, 1200);
-        SwordDown swordDown3 = new SwordDown(false, 1, 0, 1200);
-        //SwordDown swordDown4 = new SwordDown(false, 1, 0, 1200);
+        BombDown bombDown1 = new BombDown(false, 1, 0, 1200);
+        BombDown bombDown2 = new BombDown(false, 1, 0, 1200);
+        BombDown bombDown3 = new BombDown(false, 1, 0, 1200);
+        BombDown bombDown4 = new BombDown(false, 1, 0, 1200);
         
-        addObject(swordDown1,300,10);
-        addObject(swordDown2,600,10);
-        addObject(swordDown3,800,10);
-        //addObject(swordDown4,1000,10);
+        addObject(bombDown1,300,10);
+        addObject(bombDown2,500,10);
+        addObject(bombDown3,800,10);
+        addObject(bombDown4,1000,10);
 
-        swordDown1.buttonEvent();
-        swordDown2.buttonEvent();
-        swordDown3.buttonEvent();
-        //swordDown4.buttonEvent();
+        bombDown1.buttonEvent();
+        bombDown2.buttonEvent();
+        bombDown3.buttonEvent();
+        bombDown4.buttonEvent();
         
         Diamond diamond1 = new Diamond();
         Diamond diamond2 = new Diamond();
@@ -48,17 +48,24 @@ public class Level1R1 extends GamePage {
         Diamond diamond8 = new Diamond();
         Diamond diamond9 = new Diamond();
         Diamond diamond10 = new Diamond();
+        Diamond diamond11 = new Diamond();
+        Diamond diamond12 = new Diamond();
         
-        addObject(diamond1,300,690);
-        addObject(diamond2,450,500);
-        addObject(diamond3,550,690);
-        addObject(diamond4,600,500);
-        addObject(diamond5,750,450);
-        addObject(diamond6,900,690);
-        addObject(diamond7,950,500);
-        addObject(diamond8,1000,550);
-        addObject(diamond9,1050,650);
-        addObject(diamond10,1050,500);
+        addObject(diamond1,250,550);
+        addObject(diamond2,300,500);
+        addObject(diamond3,350,550);
+
+        addObject(diamond4,450,450);
+        addObject(diamond5,500,400);
+        addObject(diamond6,550,450);
+        
+        addObject(diamond7,650,450);
+        addObject(diamond8,750,400);
+        addObject(diamond9,800,450);
+
+        addObject(diamond10,900,550);
+        addObject(diamond11,950,500);
+        addObject(diamond12,1000,550);
 
         setPaintOrder(Thief.class, Diamond.class, RedButton.class);
     }

@@ -137,6 +137,22 @@ public class Thief extends Actor {
             
             this.setLocation(136,630);
         }
+        if (isTouching(BombDown.class)) {
+            lives--;
+            
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200);
+            
+            this.setLocation(136,630);
+        }
+        if (isTouching(BombUp.class)) {
+            lives--;
+            
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200);
+            
+            this.setLocation(136,630);
+        }
     }
     
     // Create by Xiaoxiao Ren. Check if the actor should move and direction of movement.

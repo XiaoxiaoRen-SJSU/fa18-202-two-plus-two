@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Level1R1 here.
+ * Write a description of class Level1R2 here.
  * 
  * @author (Min Lu) 
  * @version (11/12/2018)
@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level1R2 extends GamePage {
 
     /**
-     * Constructor for objects of class Level1R1.
+     * Constructor for objects of class Level1R2.
      * 
      */
     public Level1R2() {
@@ -48,17 +48,24 @@ public class Level1R2 extends GamePage {
         Diamond diamond8 = new Diamond();
         Diamond diamond9 = new Diamond();
         Diamond diamond10 = new Diamond();
+        Diamond diamond11 = new Diamond();
+        Diamond diamond12 = new Diamond();
         
-        addObject(diamond1,300,690);
-        addObject(diamond2,450,500);
-        addObject(diamond3,550,690);
-        addObject(diamond4,600,500);
-        addObject(diamond5,750,450);
-        addObject(diamond6,900,690);
-        addObject(diamond7,950,500);
-        addObject(diamond8,1000,550);
-        addObject(diamond9,1050,650);
-        addObject(diamond10,1050,500);
+        addObject(diamond1,250,550);
+        addObject(diamond2,300,500);
+        addObject(diamond3,350,550);
+
+        addObject(diamond4,450,450);
+        addObject(diamond5,500,400);
+        addObject(diamond6,550,450);
+        
+        addObject(diamond7,650,450);
+        addObject(diamond8,750,400);
+        addObject(diamond9,800,450);
+
+        addObject(diamond10,900,550);
+        addObject(diamond11,950,500);
+        addObject(diamond12,1000,550);
 
         setPaintOrder(Thief.class, Diamond.class, RedButton.class);
     }
