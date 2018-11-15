@@ -20,8 +20,8 @@ public class Level1R1 extends GamePage {
         addObject(thief,136,630);
         addObject(score,819,79);
         
-        Points points = new Points();
-        addObject(points,817,28);
+        DiamondLabel diamondLabel = new DiamondLabel();
+        addObject(diamondLabel,817,28);
         
         BombDown bombDown1 = new BombDown(false, 1, 0, 1200);
         BombDown bombDown2 = new BombDown(false, 1, 0, 1200);

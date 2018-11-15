@@ -25,8 +25,8 @@ public class Level3R3 extends GamePage
     public void prepare()
     {
         addObject(thief,136,630);
-        Points points = new Points();
-        addObject(points,817,28);
+        DiamondLabel diamondLabel = new DiamondLabel();
+        addObject(diamondLabel, 817, 28);
         //Diamond diamond = new Diamond();
         //addObject(diamond,817,28);
         addObject(score,819,79);

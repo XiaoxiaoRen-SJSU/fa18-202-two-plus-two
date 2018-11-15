@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Points here.
+ * Write a description of class DiamondLabel here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Points extends Actor
+public class DiamondLabel extends Actor
 {
     /**
-     * Act - do whatever the Points wants to do. This method is called whenever
+     * Act - do whatever the DiamondLabel wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 

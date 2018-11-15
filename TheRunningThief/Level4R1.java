@@ -21,8 +21,8 @@ public class Level4R1 extends GamePage {
         addObject(thief,136,630);
         addObject(score,819,79);
         
-        Points points = new Points();
-        addObject(points,817,28);
+        DiamondLabel diamondLabel = new DiamondLabel();
+        addObject(diamondLabel, 817, 28);
         
         RedButton redButton1 = new RedButton();
         RedButton redButton2 = new RedButton();
