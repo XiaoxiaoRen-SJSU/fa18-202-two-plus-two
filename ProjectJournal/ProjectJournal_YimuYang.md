@@ -31,12 +31,27 @@
 ## Week 2
 
 * What tasks I worked on:
+	
+	* Implemented "Game Over" page.
+	* Modified Level 4 code.
+	* Fixed bugs for all levels.
+	* Modified "Game Over" page.
 
 * What I plan to work on next:
 
+	* Add more features on Level 4.
+	* Fix upcoming bugs.
+	* Draw Class Diagram.
+
 * What tasks are blocked waiting on another team member:
 
+	* Waiting for codes implementation of Level 2 to draw the class diagram.
+	* Waiting for other group members' reviews of Level 4 to make more adjustments.
+
 * XP Core Value I keep:
+
+	* Communication and Simplicity.
+
 
 ## Week 3
 
