@@ -17,6 +17,7 @@ public class Bat extends Actor
         this.leftBoundary = leftBoundary;
         this.rightBoundary = rightBoundary;
     }
+
     /**
      * Act - do whatever the Bat wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

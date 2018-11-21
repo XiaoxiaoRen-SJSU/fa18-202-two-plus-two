@@ -27,8 +27,6 @@ public class Level3R3 extends GamePage
         addObject(thief,136,630);
         DiamondLabel diamondLabel = new DiamondLabel();
         addObject(diamondLabel, 817, 28);
-        //Diamond diamond = new Diamond();
-        //addObject(diamond,817,28);
         addObject(score,819,79);
         Bat bat = new Bat(1, 157, 257);
         addObject(bat,207,400);

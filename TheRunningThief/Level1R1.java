@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (11/12/2018)
  */
 public class Level1R1 extends GamePage {
-
+    
     /**
      * Constructor for objects of class Level1R1.
      * 

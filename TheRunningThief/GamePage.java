@@ -10,6 +10,7 @@ public abstract class GamePage extends World
 {
     Thief thief = Thief.getThief();
     protected Score score = new Score(Integer.toString(thief.countOfDiamond));
+    //GreenfootSound backgroundMusic = new GreenfootSound("background.wav");
     
     /**
      * Constructor for objects of class GamePage.
@@ -19,6 +20,7 @@ public abstract class GamePage extends World
     {    
         // Create a new world with 1200x7800 cells with a cell size of 1x1 pixels.
         super(1200, 780, 1); 
+        //backgroundMusic.play();
     }
     
     public abstract void prepare();
