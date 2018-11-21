@@ -59,7 +59,7 @@ public class Level1R2 extends GamePage {
         addObject(diamond5,500,400);
         addObject(diamond6,550,450);
         
-        addObject(diamond7,650,450);
+        addObject(diamond7,700,450);
         addObject(diamond8,750,400);
         addObject(diamond9,800,450);
 

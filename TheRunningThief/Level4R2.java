@@ -27,8 +27,8 @@ public class Level4R2 extends GamePage {
         RedButton redButton1 = new RedButton();
         RedButton redButton2 = new RedButton();
 
-        SwordDown swordDown1 = new SwordDown(true, -1, 200, 400);
-        SwordDown swordDown2 = new SwordDown(true, 1, 250, 450);
+        SwordDown swordDown1 = new SwordDown(true, -1, 400, 600);
+        SwordDown swordDown2 = new SwordDown(true, 1, 450, 650);
         SwordDown swordDown3 = new SwordDown(true, 1, 700, 900);
         
         redButton1.attach(swordDown1);
@@ -37,8 +37,8 @@ public class Level4R2 extends GamePage {
         
         addObject(redButton1,400,700);
         addObject(redButton2,800,700);
-        addObject(swordDown1,300,10);
-        addObject(swordDown2,350,10);
+        addObject(swordDown1,500,10);
+        addObject(swordDown2,550,10);
         addObject(swordDown3,800,10);
         
         Diamond diamond1 = new Diamond();
@@ -52,16 +52,18 @@ public class Level4R2 extends GamePage {
         Diamond diamond9 = new Diamond();
         Diamond diamond10 = new Diamond();
         
-        addObject(diamond1,100,690);
-        addObject(diamond2,200,500);
-        addObject(diamond3,300,690);
-        addObject(diamond4,400,500);
-        addObject(diamond5,500,550);
-        addObject(diamond6,600,590);
-        addObject(diamond7,700,500);
-        addObject(diamond8,900,490);
-        addObject(diamond9,1000,550);
-        addObject(diamond10,1100,500);
+        addObject(diamond1,400,690);
+        addObject(diamond2,800,690);
+        
+        addObject(diamond3,535,590);
+        addObject(diamond4,600,590);
+        addObject(diamond5,666,590);
+        addObject(diamond6,566,540);
+        addObject(diamond7,636,540);
+        addObject(diamond8,599,491);
+        
+        addObject(diamond9,300,491);
+        addObject(diamond10,900,491);
         
         setPaintOrder(Thief.class, Diamond.class, SwordDown.class, RedButton.class);
 

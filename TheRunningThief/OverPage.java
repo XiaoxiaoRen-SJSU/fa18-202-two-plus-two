@@ -27,10 +27,10 @@ public class OverPage extends GamePage {
         addObject(overTitle, 650, 127);
         
         DiamondLabel diamondLabel = new DiamondLabel();
-        addObject(diamondLabel, 600, 227);
+        addObject(diamondLabel, 600, 317);
         
         Score score = new Score(Integer.toString(thief.countOfDiamond));
-        addObject(score, 600, 278);
+        addObject(score, 600, 368);
         
         TryAgainButton tryAgainButton = new TryAgainButton();
         tryAgainButton.setCommand(replayGame);

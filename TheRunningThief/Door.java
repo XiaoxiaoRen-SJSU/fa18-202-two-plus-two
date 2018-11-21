@@ -8,12 +8,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Door extends Actor
 {
-    private boolean open = false;
+    private boolean open;
+    private int x;
+    private int y;
+    
+    public Door(int x, int y) {
+        open = false;
+        this.x = x;
+        this.y = y;
+    }
     
     public void openDoor() {
         GreenfootImage img = getImage();
         setImage("DoorRemove.png");
-        this.setLocation(699, 715);
+        this.setLocation(x, y + 139);
         open = true;
     }
     

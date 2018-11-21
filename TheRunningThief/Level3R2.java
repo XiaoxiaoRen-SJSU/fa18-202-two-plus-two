@@ -53,7 +53,7 @@ public class Level3R2 extends GamePage
         addObject(diamond10,928,648);
         Diamond diamond11 = new Diamond();
         addObject(diamond11,891,599);
-        Door door = new Door();
+        Door door = new Door(699, 576);
         addObject(door,699,576);
         thief.setDoor(door);
         
