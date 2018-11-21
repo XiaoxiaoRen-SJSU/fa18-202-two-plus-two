@@ -13,6 +13,7 @@ public class PlayGameButton extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     IScreenInvoker gameStart = new ScreenInvoker();
+    GreenfootSound playGameMusic = new GreenfootSound("playGameButton.wav");
     
     public void setScreenItem(IScreenCommand c) {
         gameStart.setCommand(c);
@@ -25,6 +26,7 @@ public class PlayGameButton extends Actor
             img.scale(300, 110);
         }
         if(Greenfoot.mouseClicked(this)) {
+            playGameMusic.play();
             gameStart.invoke();
         }
     }    

@@ -7,11 +7,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Thief extends Actor {
+    GreenfootSound backgroundMusic = new GreenfootSound("background.mp3");
     // Create by Xiaoxiao Ren. Implement Singleton Pattern.
     private static Thief thief;
     
     private Thief() {
-        
+        backgroundMusic.playLoop();
     }
     
     public static Thief getThief() {
@@ -32,6 +33,9 @@ public class Thief extends Actor {
     int JumpStrength = 10;
     
     Door door;
+    
+
+    GreenfootSound gameoverMusic = new GreenfootSound("gameover.wav");
     
     /**
      * Act - do whatever the ThiefRight wants to do. This method is called whenever
@@ -60,6 +64,8 @@ public class Thief extends Actor {
     // Create by Xiaoxiao Ren. Actor will open the door after get the key.
     private void checkKey() {
         if (isTouching(Key.class)) {
+            GreenfootSound keyMusic = new GreenfootSound("key.wav");
+            keyMusic.play();
             door.openDoor();
         }
         removeTouching(Key.class);
@@ -68,6 +74,8 @@ public class Thief extends Actor {
     // Create by Yimu Yang. Red Button should be switched to White Button if touched by actor
     private void checkButton() {
         if (isTouching(RedButton.class)) {
+            GreenfootSound redButtonMusic = new GreenfootSound("RedButton.wav");
+            redButtonMusic.play();
             Actor actor = getOneIntersectingObject(RedButton.class);
             actor.setImage("whiteButton.png");
             actor.move(0);
@@ -91,6 +99,8 @@ public class Thief extends Actor {
     // Create by Xiaoxiao Ren. Check if the thief get a diamond.
     private void checkDiamond() {
         if (isTouching(Diamond.class)) {
+            GreenfootSound diamondMusic = new GreenfootSound("diamond.wav");
+            diamondMusic.play();
             countOfDiamond++;
         }
         removeTouching(Diamond.class);
@@ -99,7 +109,8 @@ public class Thief extends Actor {
     // Create by Xiaoxiao Ren/Yimu Yang. Check if the thief touch something he should not touch.
     private void checkDie() {
         if (isTouching(Bat.class)) {
-            //System.out.println("Touch bat");
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
             lives--;
             System.currentTimeMillis();
             
@@ -110,7 +121,8 @@ public class Thief extends Actor {
         }
         Actor monster = getOneObjectAtOffset(25, 70, LandMonster.class);
         if (monster != null) {
-            //System.out.println("Touch landmonster");
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
             lives--;
             
             long curTime = System.currentTimeMillis();
@@ -120,6 +132,8 @@ public class Thief extends Actor {
         }
         
         if (isTouching(SwordDown.class)) {
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
             lives--;
             
             long curTime = System.currentTimeMillis();
@@ -130,6 +144,8 @@ public class Thief extends Actor {
 
         // Add by Min Lu. Check if the thief touch SwordUp.
         if (isTouching(SwordUp.class)) {
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
             lives--;
             
             long curTime = System.currentTimeMillis();
@@ -138,6 +154,8 @@ public class Thief extends Actor {
             this.setLocation(136,630);
         }
         if (isTouching(BombDown.class)) {
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
             lives--;
             
             long curTime = System.currentTimeMillis();
@@ -146,6 +164,8 @@ public class Thief extends Actor {
             this.setLocation(136,630);
         }
         if (isTouching(BombUp.class)) {
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
             lives--;
             
             long curTime = System.currentTimeMillis();
@@ -216,6 +236,7 @@ public class Thief extends Actor {
     // Author: Yimu Yang
     private void isOver() {
         if (lives <= 0) {
+            gameoverMusic.play();
             GamePage endPage = worldCtrl.getOverPage();
             endPage.prepare();
             Greenfoot.setWorld(endPage);

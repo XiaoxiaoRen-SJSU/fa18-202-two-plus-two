@@ -42,9 +42,9 @@ public class WorldController {
         overPage = new OverPage();
 
         successPage = new SuccessPage();
-        pageChain.add(level11);
-        pageChain.add(level12);
-        pageChain.add(level13);
+        //pageChain.add(level11);
+        //pageChain.add(level12);
+        //pageChain.add(level13);
         
 
         pageChain.add(level31);
