@@ -34,11 +34,21 @@
 
 * What tasks I worked on:
 
+  * Find the game music which will be used in the game(include voice of game character and background music).
+  * Find level completion pictures.
+
 * What I plan to work on next:
+
+  * Add game music.
+  * Finish command pattern.
 
 * What tasks are blocked waiting on another team member:
 
+  * Waiting for GamePage of Level 2.
+
 * XP Core Value I keep:
+
+  **Communication** : Work out the game details in group meeting.
 
 ## Week 3
 
