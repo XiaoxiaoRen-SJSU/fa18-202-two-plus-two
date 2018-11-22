@@ -57,6 +57,6 @@ public class Level3R2 extends GamePage
         addObject(door,699,576);
         thief.setDoor(door);
         
-        setPaintOrder(Thief.class, Door.class);
+        setPaintOrder(Thief.class, Diamond.class, DiamondLabel.class, Door.class);
     }
 }

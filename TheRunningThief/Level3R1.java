@@ -62,6 +62,8 @@ public class Level3R1 extends GamePage {
         addObject(diamond15,1083,688);
         Bat bat = new Bat(5, 245, 1100);
         addObject(bat,245,461);
+        
+        setPaintOrder(Thief.class, Diamond.class, DiamondLabel.class);
     }
     
 }

@@ -86,7 +86,7 @@ public class Level4R3 extends GamePage {
         
         
        
-        setPaintOrder(Thief.class, Key.class, Diamond.class, SwordDown.class, RedButton.class, Door.class);
+        setPaintOrder(Thief.class, Key.class, Diamond.class, DiamondLabel.class, SwordDown.class, RedButton.class, Door.class);
     }
     
 }

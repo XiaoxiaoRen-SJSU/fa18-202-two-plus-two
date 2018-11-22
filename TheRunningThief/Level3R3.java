@@ -51,8 +51,8 @@ public class Level3R3 extends GamePage
         addObject(door,699,576);
         thief.setDoor(door);
 
-        setPaintOrder(Thief.class, Door.class);
-
+        setPaintOrder(Thief.class, Diamond.class, DiamondLabel.class, Door.class);
+        
         LandMonster landMonster = new LandMonster(1, 800, 1030);
         addObject(landMonster,830,689);
         Diamond diamond6 = new Diamond();
