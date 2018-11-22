@@ -119,6 +119,33 @@ public class Thief extends Actor {
             
             this.setLocation(136,630);
         }
+
+        // Added by Wenyan He
+        if( isTouching( OneDirectionBat.class ) ) {
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
+            lives--;
+            System.currentTimeMillis();
+            
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200);   
+            
+            this.setLocation(136,630);
+        }
+
+        // Added by Wenyan He
+        if( isTouching( OneDirectionLandMonster.class ) ) {
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
+            lives--;
+            System.currentTimeMillis();
+            
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200);   
+            
+            this.setLocation(136,630);
+        }
+
         Actor monster = getOneObjectAtOffset(25, 70, LandMonster.class);
         if (monster != null) {
             GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");

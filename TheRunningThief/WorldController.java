@@ -14,6 +14,10 @@ public class WorldController {
     private GamePage level12;
     private GamePage level13;
 
+    private GamePage level21;
+    private GamePage level22;
+    private GamePage level23;
+
     private GamePage level31;
     private GamePage level32;
     private GamePage level33;
@@ -25,11 +29,15 @@ public class WorldController {
     private GamePage overPage;
     private GamePage successPage;
     
-    // Modified by Yimu Yang,Min Lu
+    // Modified by Yimu Yang, Min Lu, Wenyan He
     public WorldController() {
         level11 = new Level1R1();
         level12 = new Level1R2();
         level13 = new Level1R3();
+
+        level21 = new Level2R1();
+        level22 = new Level2R2();
+        level23 = new Level2R3();
 
         level31 = new Level3R1();
         level32 = new Level3R2();
@@ -46,6 +54,9 @@ public class WorldController {
         pageChain.add(level12);
         pageChain.add(level13);
         
+        pageChain.add(level21);
+        pageChain.add(level22);
+        pageChain.add(level23);
 
         pageChain.add(level31);
         pageChain.add(level32);
@@ -56,9 +67,6 @@ public class WorldController {
         pageChain.add(level43);
 
         pageChain.add(successPage);
-        
-        
-        
         
     }
     
