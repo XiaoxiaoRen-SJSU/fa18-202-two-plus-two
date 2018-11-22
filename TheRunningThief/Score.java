@@ -9,13 +9,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Score extends Actor
 {   
     public Score(String text) {        
-        GreenfootImage score = new GreenfootImage(40,40);
+        GreenfootImage score = new GreenfootImage(60,40);
         score.setColor(Color.WHITE);
         score.setFont(score.getFont().deriveFont(30));
         
         String newText = new String(text);
         
         if (text.length() == 1) {
+            newText = (" 0").concat(newText);
+        } else if (text.length() == 2) {
             newText = ("0").concat(newText);
         }
         score.drawString(newText,0,35);
@@ -33,6 +35,8 @@ public class Score extends Actor
         String newText = new String(text);
         
         if (text.length() == 1) {
+            newText = (" 0").concat(newText);
+        } else if (text.length() == 2) {
             newText = ("0").concat(newText);
         }
         score.drawString(newText,0,35);

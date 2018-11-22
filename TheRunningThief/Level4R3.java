@@ -68,25 +68,26 @@ public class Level4R3 extends GamePage {
         Diamond diamond11 = new Diamond();
         Diamond diamond12 = new Diamond();
         
-        addObject(diamond1,600,690);
+        addObject(diamond1,600,630);
         
-        addObject(diamond2,985,590);
-        addObject(diamond3,1050,590);
-        addObject(diamond4,1116,590);
-        addObject(diamond5,1016,540);
-        addObject(diamond6,1086,540);
-        addObject(diamond7,1049,491);
+        addObject(diamond2,985,690);
+        addObject(diamond3,1050,690);
+        addObject(diamond4,1116,690);
+        addObject(diamond5,1016,640);
+        addObject(diamond6,1086,640);
+        addObject(diamond7,1049,590);
         
         addObject(diamond8,899,450);
         addObject(diamond9,899,550);
         addObject(diamond10,899,650);
         
-        addObject(diamond11,300,550);
-        addObject(diamond12,400,550);
+        addObject(diamond11,300,500);
+        addObject(diamond12,400,500);
         
         
        
-        setPaintOrder(Thief.class, Key.class, Diamond.class, DiamondLabel.class, SwordDown.class, RedButton.class, Door.class);
+        setPaintOrder(Thief.class, Key.class, Diamond.class, SwordDown.class, RedButton.class, Door.class);
     }
     
 }
+
