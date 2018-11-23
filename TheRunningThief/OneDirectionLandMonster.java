@@ -22,17 +22,23 @@ public class OneDirectionLandMonster extends Actor
         move(monsterSpeed);
         
         if (isAtEdge()) {
+            setLocation(1180, getY());
+            // this.monsterSpeed -= 1;
+            /*
             World world = getWorld();
             world.removeObject(this);
             return;
+            */
         }
 
         // a moving landmonster can swallow a diamond in its path
+        /*
         Actor diamond = getOneObjectAtOffset(0, 0, Diamond.class);
         if (diamond != null)
         {
             World world = getWorld();
             world.removeObject(diamond);
         }
+        */
     }    
 }

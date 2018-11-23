@@ -22,18 +22,22 @@ public class OneDirectionBat extends Actor
         move(batSpeed);
         
         if (isAtEdge()) {
+            setLocation(20, getY());
+            /*
             World world = getWorld();
             world.removeObject(this);
             return;
+            */
         }
 
         // a flying bat can eat up a diamond in its path
+        /*
         Actor diamond = getOneObjectAtOffset(0, 0, Diamond.class);
         if (diamond != null)
         {
             World world = getWorld();
             world.removeObject(diamond);
         }
-        // wait for debugging later
+        */
     }    
 }

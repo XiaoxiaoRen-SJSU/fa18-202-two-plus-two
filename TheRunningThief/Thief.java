@@ -5,6 +5,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @author (your name) 
  * @version (a version number or a date)
+ * updated by Wenyan He on Nov 22, 2018 at 6:00pm PST
+ * added isTouching( RotatingBomb.class ) block
  */
 public class Thief extends Actor {
     GreenfootSound backgroundMusic = new GreenfootSound("background.mp3");
@@ -135,6 +137,19 @@ public class Thief extends Actor {
 
         // Added by Wenyan He
         if( isTouching( OneDirectionLandMonster.class ) ) {
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
+            lives--;
+            System.currentTimeMillis();
+            
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200);   
+            
+            this.setLocation(136,630);
+        }
+
+        // Added by Wenyan He
+        if( isTouching( RotatingBomb.class ) ) {
             GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
             touchObstacleMusic.play();
             lives--;

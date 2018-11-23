@@ -29,20 +29,18 @@ public class Level2R3 extends GamePage
         Bat bat2 = new Bat(-4, 30, 1170);
 
         addObject(bat1, 30, 100);
-        addObject(bat2, 1170, 200);
+        addObject(bat2, 1170, 250);
       
-        LandMonster landMonster1 = new LandMonster(0, 0, 1200);
-        LandMonster landMonster2 = new LandMonster(2, 400, 600);
-        LandMonster landMonster3 = new LandMonster(-2, 700, 850);
-        LandMonster landMonster4 = new LandMonster(2, 950, 1100);
+        // LandMonster landMonster1 = new LandMonster(0, 0, 1200);
+        LandMonster landMonster2 = new LandMonster(2, 250, 450);
+        LandMonster landMonster3 = new LandMonster(-1, 700, 850);
+        LandMonster landMonster4 = new LandMonster(1, 950, 1100);
 
-        addObject(landMonster1, 250, 670);
+        // addObject(landMonster1, 250, 670);
         addObject(landMonster2, 400, 670);
         addObject(landMonster3, 850, 670);
         addObject(landMonster4, 950, 670);
 
-        
-        
         Diamond diamond1 = new Diamond();
         Diamond diamond2 = new Diamond();
         Diamond diamond3 = new Diamond();
@@ -52,28 +50,16 @@ public class Level2R3 extends GamePage
         Diamond diamond7 = new Diamond();
         Diamond diamond8 = new Diamond();
         Diamond diamond9 = new Diamond();
-        Diamond diamond10 = new Diamond();
-        Diamond diamond11 = new Diamond();
-        Diamond diamond12 = new Diamond();
-        
         
         addObject(diamond1, 250, 500);
         addObject(diamond2, 350, 500);
         addObject(diamond3, 600, 630);
-        addObject(diamond4, 820, 700);
+        addObject(diamond4, 600, 700);
         addObject(diamond5, 1050, 400);
-        /*
-
-        addObject(diamond6,550,450);
-        
-        addObject(diamond7,700,450);
-        addObject(diamond8,750,400);
-        addObject(diamond9,800,450);
-
-        addObject(diamond10,900,550);
-        addObject(diamond11,950,500);
-        addObject(diamond12,1000,550);
-        */
+        addObject(diamond6, 300, 550);
+        addObject(diamond7, 1000, 450);
+        addObject(diamond8, 1100, 450);
+        addObject(diamond9, 1050, 500);
 
         setPaintOrder(Thief.class, Diamond.class, DiamondLabel.class, Bat.class,
             LandMonster.class);

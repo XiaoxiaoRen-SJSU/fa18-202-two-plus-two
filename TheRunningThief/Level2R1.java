@@ -25,38 +25,45 @@ public class Level2R1 extends GamePage
         DiamondLabel diamondLabel = new DiamondLabel();
         addObject(diamondLabel,817,28);
         
-        // only stationary landmonsters in this stage
-        LandMonster landMonster1 = new LandMonster(0, 0, 1200);
-        LandMonster landMonster2 = new LandMonster(0, 0, 1200);
-        LandMonster landMonster3 = new LandMonster(0, 0, 1200);
-        LandMonster landMonster4 = new LandMonster(0, 0, 1200);
+        LandMonster landMonster1 = new LandMonster(1, 250, 350);
+        LandMonster landMonster2 = new LandMonster(2, 700, 850);
+        LandMonster landMonster3 = new LandMonster(2, 800, 950);
 
         addObject(landMonster1, 350, 670);
-        // addObject(landMonster2, 440, 670);
-        addObject(landMonster3, 700, 670);
-        addObject(landMonster4, 950, 670);
+        addObject(landMonster2, 700, 670);
+        addObject(landMonster3, 800, 670);
 
-        BombDown bombDown1 = new BombDown(false, 1, 0, 1200);
-        BombDown bombDown2 = new BombDown(false, 1, 0, 1200);
-        BombDown bombDown3 = new BombDown(false, 1, 0, 1200);
-        BombDown bombDown4 = new BombDown(false, 1, 0, 1200);
+        RotatingBomb bomb1 = new RotatingBomb(2);
+        RotatingBomb bomb2 = new RotatingBomb(2);
+        RotatingBomb bomb3 = new RotatingBomb(2);
+        RotatingBomb bomb4 = new RotatingBomb(2);
+        RotatingBomb bomb5 = new RotatingBomb(2);
+        RotatingBomb bomb6 = new RotatingBomb(2);
         
-        addObject(bombDown1, 300, 100);
-        addObject(bombDown2, 500, 100);
-        addObject(bombDown3, 820, 180);
-        addObject(bombDown4, 1000, 250);
+        addObject(bomb1, 100, 100);
+        addObject(bomb2, 300, 100);
+        addObject(bomb3, 500, 100);
+        addObject(bomb4, 700, 100);
+        addObject(bomb5, 900, 100);
+        addObject(bomb6, 1100, 100);
 
         Diamond diamond1 = new Diamond();
         Diamond diamond2 = new Diamond();
         Diamond diamond3 = new Diamond();
         Diamond diamond4 = new Diamond();
         Diamond diamond5 = new Diamond();
+        Diamond diamond6 = new Diamond();
+        Diamond diamond7 = new Diamond();
+        Diamond diamond8 = new Diamond();
         
         addObject(diamond1, 250, 500);
-        addObject(diamond2, 350, 500);
-        addObject(diamond3, 600, 630);
-        addObject(diamond4, 820, 700);
-        addObject(diamond5, 1050, 400);
+        addObject(diamond2, 300, 500);
+        addObject(diamond3, 550, 630);
+        addObject(diamond4, 600, 630);
+        addObject(diamond5, 575, 600);
+        addObject(diamond6, 1050, 400);
+        addObject(diamond7, 1050, 500);
+        addObject(diamond8, 1050, 600);
 
         setPaintOrder(Thief.class, Diamond.class, DiamondLabel.class,
             BombDown.class, LandMonster.class);
