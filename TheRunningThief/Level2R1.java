@@ -25,13 +25,13 @@ public class Level2R1 extends GamePage
         DiamondLabel diamondLabel = new DiamondLabel();
         addObject(diamondLabel,817,28);
         
-        LandMonster landMonster1 = new LandMonster(1, 250, 350);
-        LandMonster landMonster2 = new LandMonster(2, 700, 850);
-        LandMonster landMonster3 = new LandMonster(2, 800, 950);
+        LandMonster landMonster1 = new LandMonster(1, 300, 400);
+        LandMonster landMonster2 = new LandMonster(2, 700, 950);
+        // LandMonster landMonster3 = new LandMonster(2, 800, 950);
 
         addObject(landMonster1, 350, 670);
         addObject(landMonster2, 700, 670);
-        addObject(landMonster3, 800, 670);
+        // addObject(landMonster3, 800, 670);
 
         RotatingBomb bomb1 = new RotatingBomb(2);
         RotatingBomb bomb2 = new RotatingBomb(2);
