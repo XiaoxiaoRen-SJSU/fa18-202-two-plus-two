@@ -32,7 +32,7 @@ public class Level2R3 extends GamePage
         addObject(bat2, 1170, 250);
       
         // LandMonster landMonster1 = new LandMonster(0, 0, 1200);
-        LandMonster landMonster2 = new LandMonster(2, 250, 450);
+        LandMonster landMonster2 = new LandMonster(2, 300, 450);
         LandMonster landMonster3 = new LandMonster(-1, 700, 850);
         LandMonster landMonster4 = new LandMonster(1, 950, 1100);
 
