@@ -8,291 +8,315 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  *          6:00pm PST added isTouching( RotatingBomb.class ) block
  */
 public class Thief extends Actor {
-	GreenfootSound backgroundMusic = new GreenfootSound("background.mp3");
-	// Create by Xiaoxiao Ren. Implement Singleton Pattern.
-	private static Thief thief;
+    GreenfootSound backgroundMusic = new GreenfootSound("background.mp3");
+    // Create by Xiaoxiao Ren. Implement Singleton Pattern.
+    private static Thief thief;
 
-	private Thief() {
-		backgroundMusic.playLoop();
-	}
+    // Created by Wenyan He for state pattern implementation
+    private IThiefState thiefState = new ThiefRightState();
 
-	public static Thief getThief() {
-		if (thief == null) {
-			thief = new Thief();
-		}
-		return thief;
-	}
-	// Singleton ends here
+    private Thief() {
+        backgroundMusic.playLoop();
+    }
 
-	WorldController worldCtrl;
-	public int countOfDiamond = 0;
-	public int lives = 3; // You have 3 lives at beginning of the game.
+    public static Thief getThief() {
+        if (thief == null) {
+            thief = new Thief();
+        }
+        return thief;
+    }
+    // Singleton ends here
 
-	int HSpeed = 8;
-	int VSpeed = 0;
-	int acceleration = 1;
-	int JumpStrength = 10;
+    WorldController worldCtrl;
+    public int countOfDiamond = 0;
+    public int lives = 3; // You have 3 lives at beginning of the game.
 
-	Door door;
+    int HSpeed = 8;
+    int VSpeed = 0;
+    int acceleration = 1;
+    int JumpStrength = 10;
 
-	GreenfootSound gameoverMusic = new GreenfootSound("gameover.wav");
+    Door door;
 
-	/**
-	 * Act - do whatever the ThiefRight wants to do. This method is called whenever
-	 * the 'Act' or 'Run' button gets pressed in the environment.
-	 */
-	public void act() {
-		// Added By Yimu Yang
-		isOver();
-		checkDie();
-		checkMove();
-		checkDiamond();
-		changePage();
-		checkKey();
-		// Added By Yimu Yang
-		checkButton();
-	}
+    GreenfootSound gameoverMusic = new GreenfootSound("gameover.wav");
 
-	public void setDoor(Door d) {
-		this.door = d;
-	}
+    /**
+     * Act - do whatever the ThiefRight wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() {
+        // Added By Yimu Yang
+        isOver();
+        checkDie();
+        checkMove();
+        checkDiamond();
+        changePage();
+        checkKey();
+        // Added By Yimu Yang
+        checkButton();
+    }
 
-	public void setWorldController(WorldController w) {
-		this.worldCtrl = w;
-	}
+    public void setDoor(Door d) {
+        this.door = d;
+    }
 
-	// Create by Xiaoxiao Ren. Actor will open the door after get the key.
-	private void checkKey() {
-		if (isTouching(Key.class)) {
-			GreenfootSound keyMusic = new GreenfootSound("key.wav");
-			keyMusic.play();
-			door.openDoor();
-		}
-		removeTouching(Key.class);
-	}
+    public void setWorldController(WorldController w) {
+        this.worldCtrl = w;
+    }
 
-	// Create by Yimu Yang. Red Button should be switched to White Button if touched
-	// by actor
-	private void checkButton() {
-		if (isTouching(RedButton.class)) {
-			GreenfootSound redButtonMusic = new GreenfootSound("RedButton.wav");
-			redButtonMusic.play();
-			Actor actor = getOneIntersectingObject(RedButton.class);
-			actor.setImage("whiteButton.png");
-			actor.move(0);
-		}
-	}
+    // Create by Xiaoxiao Ren. Actor will open the door after get the key.
+    private void checkKey() {
+        if (isTouching(Key.class)) {
+            GreenfootSound keyMusic = new GreenfootSound("key.wav");
+            keyMusic.play();
+            door.openDoor();
+        }
+        removeTouching(Key.class);
+    }
 
-	// Create by Xiaoxiao Ren. Change page function.
-	private void changePage() {
-		if (getX() >= getWorld().getWidth() - 20) {
-			if (worldCtrl != null) {
-				int index = (worldCtrl.getPageChain()).indexOf((GamePage) getWorld());
-				if (index != worldCtrl.getPageChain().size() - 1) {
-					GamePage nextWorld = worldCtrl.getPageChain().get(index + 1);
-					nextWorld.prepare();
-					Greenfoot.setWorld(nextWorld);
-				}
-			}
-		}
-	}
+    // Create by Yimu Yang. Red Button should be switched to White Button if touched
+    // by actor
+    private void checkButton() {
+        if (isTouching(RedButton.class)) {
+            GreenfootSound redButtonMusic = new GreenfootSound("RedButton.wav");
+            redButtonMusic.play();
+            Actor actor = getOneIntersectingObject(RedButton.class);
+            actor.setImage("whiteButton.png");
+            actor.move(0);
+        }
+    }
 
-	// Create by Xiaoxiao Ren. Check if the thief get a diamond.
-	private void checkDiamond() {
-		if (isTouching(Diamond.class)) {
-			GreenfootSound diamondMusic = new GreenfootSound("diamond.wav");
-			diamondMusic.play();
-			countOfDiamond++;
-		}
-		removeTouching(Diamond.class);
-	}
+    // Create by Xiaoxiao Ren. Change page function.
+    private void changePage() {
+        if (getX() >= getWorld().getWidth() - 20) {
+            if (worldCtrl != null) {
+                int index = (worldCtrl.getPageChain()).indexOf((GamePage) getWorld());
+                if (index != worldCtrl.getPageChain().size() - 1) {
+                    GamePage nextWorld = worldCtrl.getPageChain().get(index + 1);
+                    nextWorld.prepare();
+                    Greenfoot.setWorld(nextWorld);
+                }
+            }
+        }
+    }
 
-	// Create by Xiaoxiao Ren/Yimu Yang. Check if the thief touch something he
-	// should not touch.
-	private void checkDie() {
-		if (isTouching(Bat.class)) {
-			GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
-			touchObstacleMusic.play();
-			lives--;
-			System.currentTimeMillis();
+    // Create by Xiaoxiao Ren. Check if the thief get a diamond.
+    private void checkDiamond() {
+        if (isTouching(Diamond.class)) {
+            GreenfootSound diamondMusic = new GreenfootSound("diamond.wav");
+            diamondMusic.play();
+            countOfDiamond++;
+        }
+        removeTouching(Diamond.class);
+    }
 
-			long curTime = System.currentTimeMillis();
-			while (System.currentTimeMillis() < curTime + 200)
-				;
+    // Create by Xiaoxiao Ren/Yimu Yang. Check if the thief touch something he
+    // should not touch.
+    private void checkDie() {
+        if (isTouching(Bat.class)) {
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
+            lives--;
+            System.currentTimeMillis();
 
-			this.setLocation(136, 630);
-		}
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200)
+                ;
 
-		// Added by Wenyan He
-		if (isTouching(OneDirectionBat.class)) {
-			GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
-			touchObstacleMusic.play();
-			lives--;
-			System.currentTimeMillis();
+            this.setLocation(136, 630);
+        }
 
-			long curTime = System.currentTimeMillis();
-			while (System.currentTimeMillis() < curTime + 200)
-				;
+        // Added by Wenyan He
+        if (isTouching(OneDirectionBat.class)) {
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
+            lives--;
+            System.currentTimeMillis();
 
-			this.setLocation(136, 630);
-		}
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200)
+                ;
 
-		// Added by Wenyan He
-		if (isTouching(OneDirectionLandMonster.class)) {
-			GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
-			touchObstacleMusic.play();
-			lives--;
-			System.currentTimeMillis();
+            this.setLocation(136, 630);
+        }
 
-			long curTime = System.currentTimeMillis();
-			while (System.currentTimeMillis() < curTime + 200)
-				;
+        // Added by Wenyan He
+        if (isTouching(OneDirectionLandMonster.class)) {
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
+            lives--;
+            System.currentTimeMillis();
 
-			this.setLocation(136, 630);
-		}
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200)
+                ;
 
-		// Added by Wenyan He
-		if (isTouching(RotatingBomb.class)) {
-			GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
-			touchObstacleMusic.play();
-			lives--;
-			System.currentTimeMillis();
+            this.setLocation(136, 630);
+        }
 
-			long curTime = System.currentTimeMillis();
-			while (System.currentTimeMillis() < curTime + 200)
-				;
+        // Added by Wenyan He
+        if (isTouching(RotatingBomb.class)) {
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
+            lives--;
+            System.currentTimeMillis();
 
-			this.setLocation(136, 630);
-		}
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200)
+                ;
 
-		Actor monster = getOneObjectAtOffset(25, 70, LandMonster.class);
-		if (monster != null) {
-			GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
-			touchObstacleMusic.play();
-			lives--;
+            this.setLocation(136, 630);
+        }
 
-			long curTime = System.currentTimeMillis();
-			while (System.currentTimeMillis() < curTime + 200)
-				;
+        Actor monster = getOneObjectAtOffset(25, 70, LandMonster.class);
+        if (monster != null) {
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
+            lives--;
 
-			this.setLocation(136, 630);
-		}
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200)
+                ;
 
-		if (isTouching(SwordDown.class)) {
-			GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
-			touchObstacleMusic.play();
-			lives--;
+            this.setLocation(136, 630);
+        }
 
-			long curTime = System.currentTimeMillis();
-			while (System.currentTimeMillis() < curTime + 200)
-				;
+        if (isTouching(SwordDown.class)) {
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
+            lives--;
 
-			this.setLocation(136, 630);
-		}
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200)
+                ;
 
-		// Add by Min Lu. Check if the thief touch SwordUp.
-		if (isTouching(SwordUp.class)) {
-			GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
-			touchObstacleMusic.play();
-			lives--;
+            this.setLocation(136, 630);
+        }
 
-			long curTime = System.currentTimeMillis();
-			while (System.currentTimeMillis() < curTime + 200)
-				;
+        // Add by Min Lu. Check if the thief touch SwordUp.
+        if (isTouching(SwordUp.class)) {
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
+            lives--;
 
-			this.setLocation(136, 630);
-		}
-		if (isTouching(BombDown.class)) {
-			GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
-			touchObstacleMusic.play();
-			lives--;
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200)
+                ;
 
-			long curTime = System.currentTimeMillis();
-			while (System.currentTimeMillis() < curTime + 200)
-				;
+            this.setLocation(136, 630);
+        }
+        if (isTouching(BombDown.class)) {
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
+            lives--;
 
-			this.setLocation(136, 630);
-		}
-		if (isTouching(BombUp.class)) {
-			GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
-			touchObstacleMusic.play();
-			lives--;
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200)
+                ;
 
-			long curTime = System.currentTimeMillis();
-			while (System.currentTimeMillis() < curTime + 200)
-				;
+            this.setLocation(136, 630);
+        }
+        if (isTouching(BombUp.class)) {
+            GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
+            touchObstacleMusic.play();
+            lives--;
 
-			this.setLocation(136, 630);
-		}
-	}
+            long curTime = System.currentTimeMillis();
+            while (System.currentTimeMillis() < curTime + 200)
+                ;
 
-	// Create by Xiaoxiao Ren. Check if the actor should move and direction of
-	// movement.
-	private void checkMove() {
-		if (door != null && !door.isOpen()) {
-			Actor dr = getOneObjectAtOffset(20, 70, Door.class);
-			if (dr != null) {
-			} else {
-				if (Greenfoot.isKeyDown("right")) {
-					setLocation(getX() + HSpeed, getY());
-				}
-			}
+            this.setLocation(136, 630);
+        }
+    }
 
-		} else {
-			if (Greenfoot.isKeyDown("right")) {
-				setLocation(getX() + HSpeed, getY());
-			}
-		}
+    // Create by Xiaoxiao Ren. Check if the actor should move and direction of
+    // movement.
+    private void checkMove() {
+        if (door != null && !door.isOpen()) {
+            Actor dr = getOneObjectAtOffset(20, 70, Door.class);
+            if (dr != null) {
+            } else {
+                if (Greenfoot.isKeyDown("right")) {
+                    // added by Wenyan He for state pattern implementation
+                    if (HSpeed < 0)  // thief now facing left, or in Left State
+                        thiefState.toggleState(this);
+                    setLocation(getX() + HSpeed, getY());
+                }
+            }
 
-		if (Greenfoot.isKeyDown("left")) {
-			setLocation(getX() - HSpeed, getY());
-		}
+        } else {
+            if (Greenfoot.isKeyDown("right")) {
+                // added by Wenyan He for state pattern implementation
+                if (HSpeed < 0)  // thief now facing left, or in Left State
+                    thiefState.toggleState(this);
+                setLocation(getX() + HSpeed, getY());
+            }
+        }
 
-		if (Greenfoot.isKeyDown("space")) {
-			jump();
-		}
+        if (Greenfoot.isKeyDown("left")) {
+            // added by Wenyan He for state pattern implementation
+            if (HSpeed > 0)  // thief now facing right, or in Right State
+                thiefState.toggleState(this);
+            setLocation(getX() + HSpeed, getY());  // plus needs further check
+        }
 
-		fallCheck();
-	}
+        if (Greenfoot.isKeyDown("space")) {
+            jump();
+        }
 
-	// Create by Xiaoxiao Ren. Jump funtion.
-	private void jump() {
-		VSpeed = -JumpStrength;
-		fall();
-	}
+        fallCheck();
+    }
 
-	// Create by Xiaoxiao Ren. Check if the actor should fall.
-	private void fallCheck() {
-		if (getY() >= 630) {
-			VSpeed = 0;
-		} else {
-			fall();
-		}
-	}
+    // Create by Xiaoxiao Ren. Jump funtion.
+    private void jump() {
+        VSpeed = -JumpStrength;
+        fall();
+    }
 
-	// Create by Xiaoxiao Ren. Fall funtion.
-	private void fall() {
-		setLocation(getX(), getY() + VSpeed);
-		VSpeed += acceleration;
-	}
+    // Create by Xiaoxiao Ren. Check if the actor should fall.
+    private void fallCheck() {
+        if (getY() >= 630) {
+            VSpeed = 0;
+        } else {
+            fall();
+        }
+    }
 
-	// Create by Xiaoxiao Ren. Check falling boundary condition.
-	private boolean isGround() {
-		if (getY() == 630) {
-			VSpeed = 0;
-			return true;
-		}
-		return false;
-	}
+    // Create by Xiaoxiao Ren. Fall funtion.
+    private void fall() {
+        setLocation(getX(), getY() + VSpeed);
+        VSpeed += acceleration;
+    }
 
-	// Author: Yimu Yang
-	private void isOver() {
-		if (lives <= 0) {
-			gameoverMusic.play();
-			GamePage endPage = worldCtrl.getOverPage();
-			endPage.prepare();
-			Greenfoot.setWorld(endPage);
-		}
-	}
+    // Create by Xiaoxiao Ren. Check falling boundary condition.
+    private boolean isGround() {
+        if (getY() == 630) {
+            VSpeed = 0;
+            return true;
+        }
+        return false;
+    }
 
+    // Author: Yimu Yang
+    private void isOver() {
+        if (lives <= 0) {
+            // added by Wenyan He to adjust thief direction for next round
+            thief.setImage("right.png");
+
+            gameoverMusic.play();
+            GamePage endPage = worldCtrl.getOverPage();
+            endPage.prepare();
+            Greenfoot.setWorld(endPage);
+        }
+    }
+
+    // Added by Wenyan He for state pattern implementation
+    public void reverseDirection() {
+        HSpeed = -HSpeed;
+    }
+
+    // Added by Wenyan He for state pattern implementation
+    public void setState(IThiefState state) {
+        thiefState = state;
+    }
 }
