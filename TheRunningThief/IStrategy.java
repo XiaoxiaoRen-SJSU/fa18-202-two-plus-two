@@ -8,7 +8,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public interface IStrategy{
 	/**
-	 * setSpeed can set actors' speed.
+	 * diffDegree can change actors' speed.
 	 */
-	public int getSpeed();
+	public int diffDegree();
 }

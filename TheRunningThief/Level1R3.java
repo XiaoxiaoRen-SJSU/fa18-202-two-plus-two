@@ -17,6 +17,9 @@ public class Level1R3 extends GamePage {
 	}
 
 	public void prepare() {
+		IStrategy s = GameModeSingleton.getInstance().getStrategy();
+		int speed = 3 * s.diffDegree();
+
 		addObject(thief, 136, 630);
 		addObject(score, 819, 79);
 
@@ -25,13 +28,10 @@ public class Level1R3 extends GamePage {
 
 		BombUp bombUp1 = new BombUp(true, 1, 575, 685);
 
-		addObject(bombUp1, 500, 680);
+		addObject(bombUp1, 600, 680);
 
-		IStrategy s = GameModeSingleton.getInstance().getStrategy();
-		int downSpeed = s.getSpeed();
-
-		SwordDown swordDown1 = new SwordDown(false, 1, 0, 1200, downSpeed);
-		SwordDown swordDown2 = new SwordDown(false, 1, 0, 1200, downSpeed);
+		SwordDown swordDown1 = new SwordDown(false, 1, 0, 1200, speed);
+		SwordDown swordDown2 = new SwordDown(false, 1, 0, 1200, speed);
 
 		addObject(swordDown1, 300, 770);
 		addObject(swordDown2, 900, 770);
@@ -50,9 +50,9 @@ public class Level1R3 extends GamePage {
 
 		addObject(diamond1, 250, 500);
 		addObject(diamond2, 300, 500);
-		addObject(diamond3, 650, 630);
-		addObject(diamond4, 700, 630);
-		addObject(diamond5, 675, 600);
+		addObject(diamond3, 750, 630);
+		addObject(diamond4, 800, 630);
+		addObject(diamond5, 775, 600);
 		addObject(diamond6, 1050, 400);
 		addObject(diamond7, 1050, 500);
 		addObject(diamond8, 1050, 600);

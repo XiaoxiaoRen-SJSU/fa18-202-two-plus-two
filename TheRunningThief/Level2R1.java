@@ -18,7 +18,7 @@ public class Level2R1 extends GamePage {
 
 	public void prepare() {
 		IStrategy s = GameModeSingleton.getInstance().getStrategy();
-		int speed = s.getSpeed()/3;
+		int speed = 1 * s.diffDegree();
 
 		addObject(thief, 136, 630);
 		addObject(score, 819, 79);

@@ -22,21 +22,21 @@ public class Level3R3 extends GamePage {
 	 */
 	public void prepare() {
 		IStrategy s = GameModeSingleton.getInstance().getStrategy();
-		int speed = s.getSpeed()/3;
+		int speed = 1 * s.diffDegree();
 
 		addObject(thief, 136, 630);
 		DiamondLabel diamondLabel = new DiamondLabel();
 		addObject(diamondLabel, 817, 28);
 		addObject(score, 819, 79);
-		Bat bat = new Bat(speed, 157, 257);
+		Bat bat = new Bat(1, 157, 257);
 		addObject(bat, 207, 400);
-		Bat bat2 = new Bat(speed, 224, 324);
+		Bat bat2 = new Bat(1, 224, 324);
 		addObject(bat2, 274, 400);
-		Bat bat3 = new Bat(speed, 463, 563);
+		Bat bat3 = new Bat(1, 463, 563);
 		addObject(bat3, 513, 400);
-		Bat bat4 = new Bat(speed, 530, 630);
+		Bat bat4 = new Bat(1, 530, 630);
 		addObject(bat4, 580, 400);
-		Key key = new Key(speed, 344, 444);
+		Key key = new Key(1, 344, 444);
 		addObject(key, 394, 400);
 		Diamond diamond2 = new Diamond();
 		addObject(diamond2, 354, 680);

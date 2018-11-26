@@ -2,7 +2,7 @@
 comment0.target=BombDown
 comment0.text=\n\ Write\ a\ description\ of\ class\ BombDown\ here.\n\ \n\ @author\ (Min\ Lu)\n\ @version\ (11/13/2018)\n
 comment1.params=_shouldMove\ _speed\ _leftBound\ _rightBound\ _downSpeed
-comment1.target=BombDown(boolean,\ int,\ int,\ int,\ int)
+comment1.target=BombDown(boolean,\ int,\ int,\ int,\ double)
 comment2.params=
 comment2.target=void\ buttonEvent()
 comment3.params=

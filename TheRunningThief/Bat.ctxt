@@ -2,7 +2,7 @@
 comment0.target=Bat
 comment0.text=\n\ Write\ a\ description\ of\ class\ Bat\ here.\n\ \n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=speed\ leftBoundary\ rightBoundary
-comment1.target=Bat(int,\ int,\ int)
+comment1.target=Bat(double,\ int,\ int)
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\n\ Act\ -\ do\ whatever\ the\ Bat\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\n\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n

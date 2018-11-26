@@ -17,18 +17,18 @@ public class Level1R2 extends GamePage {
 	}
 
 	public void prepare() {
+		IStrategy s = GameModeSingleton.getInstance().getStrategy();
+		int speed = 3 * s.diffDegree();
+
 		addObject(thief, 136, 630);
 		addObject(score, 819, 79);
 
 		DiamondLabel diamondLabel = new DiamondLabel();
 		addObject(diamondLabel, 817, 28);
 
-		IStrategy s = GameModeSingleton.getInstance().getStrategy();
-		int upSpeed = s.getSpeed();
-
 		
-		SwordUp swordUp1 = new SwordUp(false, 1, 0, 1200, upSpeed);
-		SwordUp swordUp2 = new SwordUp(false, 1, 0, 1200, upSpeed);
+		SwordUp swordUp1 = new SwordUp(false, 1, 0, 1200, speed);
+		SwordUp swordUp2 = new SwordUp(false, 1, 0, 1200, speed);
 
 		addObject(swordUp1, 400, 770);
 		addObject(swordUp2, 800, 770);

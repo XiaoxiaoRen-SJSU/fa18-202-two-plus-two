@@ -15,7 +15,7 @@ public class EasyModeButton extends Actor{
 	public void act() {
 		if (Greenfoot.mousePressed(this)) {
 			GreenfootImage img = getImage();
-			img.scale(190, 52);
+			img.scale(200, 55);
 		}
 
 		if (Greenfoot.mouseClicked(this)) {
