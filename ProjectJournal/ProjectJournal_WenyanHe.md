@@ -16,9 +16,9 @@
 * What I plan to work on next:
   - To get a clear handle on my assignment and responsibilities
   - To research how to implement state pattern design for this project
-* What tasks are blocked waiting on another team member:
+* What tasks are blocked waiting on another team member: \
   N/A
-* XP Core Value I keep:
+* XP Core Value I keep: \
   Clear and thorough discussion/communication with teammates
 
 ## Week 2
