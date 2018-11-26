@@ -16,30 +16,35 @@
 * What I plan to work on next:
   - To get a clear handle on my assignment and responsibilities
   - To research how to implement state pattern design for this project
-* What tasks are blocked waiting on another team member: \
-  N/A
-* XP Core Value I keep: \
-  Clear and thorough discussion/communication with teammates
+* What tasks are blocked waiting on another team member: N/A
+* XP Core Value I keep:
+  - Clear and thorough discussion/communication with teammates
 
 ## Week 2
 
 * What tasks I worked on:
-
+  - Started coding for game page of Level 2 (which is my own share)
 * What I plan to work on next:
-
-* What tasks are blocked waiting on another team member:
+  - To implement state pattern design across the board
+* What tasks are blocked waiting on another team member: N/A
 
 * XP Core Value I keep:
+  - Meeting/communication with teammates for further clarification
 
 ## Week 3
 
 * What tasks I worked on:
-
+  - Finished coding for Level 2 game page
+  - Started coding for state pattern implementation
 * What I plan to work on next:
-
-* What tasks are blocked waiting on another team member:
+  - To coordinate with teammates and apply state pattern design to their
+    finished work
+* What tasks are blocked waiting on another team member: N/A
 
 * XP Core Value I keep:
+  - Dicussion with teammates to find out about their work
+  - Ease to read API of someone else's code, which makes me strive to write code
+    with elegant APIs
 
 ## Week 4
 
