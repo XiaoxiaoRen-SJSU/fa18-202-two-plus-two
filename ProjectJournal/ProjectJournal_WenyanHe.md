@@ -11,12 +11,15 @@
 ## Week 1
 
 * What tasks I worked on:
-
+  - Found out what the project was all about
+  - Participated in discussion with teammate over design ideas
 * What I plan to work on next:
-
+  - To get a clear handle on my assignment and responsibilities
+  - To research how to implement state pattern design for this project
 * What tasks are blocked waiting on another team member:
-
+  N/A
 * XP Core Value I keep:
+  Clear and thorough discussion/communication with teammates
 
 ## Week 2
 
