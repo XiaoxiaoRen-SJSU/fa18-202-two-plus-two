@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=IStrategy
-comment0.text=\n\ Write\ a\ description\ of\ interface\ IStrategy\ here.\n\ \n\ @author\ (Min\ Lu)\n\ @version\ (11/25/2018)\n
-comment1.params=
-comment1.target=double\ diffDegree()
-comment1.text=\n\ diffDegree\ can\ change\ actors'\ speed.\n
-numComments=2
