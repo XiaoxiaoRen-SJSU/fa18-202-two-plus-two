@@ -56,12 +56,20 @@
 ## Week 3
 
 * What tasks I worked on:
+	
+	* Keep modifing level 4 to make the game more playable.
 
 * What I plan to work on next:
 
+	* Draw a class diagram for the game.
+
 * What tasks are blocked waiting on another team member:
 
+	* Waiting for the implementation of strategy and state pattern to complete the class diagram.
+
 * XP Core Value I keep:
+
+	* Communication and Simplicity.
 
 ## Week 4
 
