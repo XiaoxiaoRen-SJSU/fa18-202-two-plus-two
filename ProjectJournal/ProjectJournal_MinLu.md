@@ -52,18 +52,28 @@
 
 * What tasks I worked on:
 
+   * Implement HomePage Strategy pattern of button "Easy" and "Hard".
+   
 * What I plan to work on next:
+
+   * Create Activity Diagram & Use Case Diagram
 
 * What tasks are blocked waiting on another team member:
 
 * XP Core Value I keep:
+
+  * Communicate with other team member. 
 
 ## Week 4
 
 * What tasks I worked on:
 
+   * Create Activity Diagram & Use Case Diagram
+
 * What I plan to work on next:
 
 * What tasks are blocked waiting on another team member:
 
 * XP Core Value I keep:
+
+  * Communicate with other team member. 
