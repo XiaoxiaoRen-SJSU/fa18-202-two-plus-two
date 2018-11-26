@@ -123,6 +123,7 @@ public class Thief extends Actor {
             while (System.currentTimeMillis() < curTime + 200)
                 ;
 
+            this.setImage("right.png");
             this.setLocation(136, 630);
         }
 
@@ -137,6 +138,7 @@ public class Thief extends Actor {
             while (System.currentTimeMillis() < curTime + 200)
                 ;
 
+            this.setImage("right.png");
             this.setLocation(136, 630);
         }
 
@@ -151,6 +153,7 @@ public class Thief extends Actor {
             while (System.currentTimeMillis() < curTime + 200)
                 ;
 
+            this.setImage("right.png");
             this.setLocation(136, 630);
         }
 
@@ -165,6 +168,7 @@ public class Thief extends Actor {
             while (System.currentTimeMillis() < curTime + 200)
                 ;
 
+            this.setImage("right.png");
             this.setLocation(136, 630);
         }
 
@@ -178,6 +182,7 @@ public class Thief extends Actor {
             while (System.currentTimeMillis() < curTime + 200)
                 ;
 
+            this.setImage("right.png");
             this.setLocation(136, 630);
         }
 
@@ -190,6 +195,7 @@ public class Thief extends Actor {
             while (System.currentTimeMillis() < curTime + 200)
                 ;
 
+            this.setImage("right.png");
             this.setLocation(136, 630);
         }
 
@@ -203,6 +209,7 @@ public class Thief extends Actor {
             while (System.currentTimeMillis() < curTime + 200)
                 ;
 
+            this.setImage("right.png");
             this.setLocation(136, 630);
         }
         if (isTouching(BombDown.class)) {
@@ -214,6 +221,7 @@ public class Thief extends Actor {
             while (System.currentTimeMillis() < curTime + 200)
                 ;
 
+            this.setImage("right.png");
             this.setLocation(136, 630);
         }
         if (isTouching(BombUp.class)) {
@@ -225,6 +233,7 @@ public class Thief extends Actor {
             while (System.currentTimeMillis() < curTime + 200)
                 ;
 
+            this.setImage("right.png");
             this.setLocation(136, 630);
         }
     }

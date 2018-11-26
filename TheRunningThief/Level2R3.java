@@ -26,18 +26,16 @@ public class Level2R3 extends GamePage {
 		DiamondLabel diamondLabel = new DiamondLabel();
 		addObject(diamondLabel, 817, 28);
 
-		Bat bat1 = new Bat(speed, 30, 1170);
-		Bat bat2 = new Bat(-speed, 30, 1170);
+		Bat bat1 = new Bat(speed*3, 30, 1170);
+		Bat bat2 = new Bat(-speed*3, 30, 1170);
 
 		addObject(bat1, 30, 100);
 		addObject(bat2, 1170, 250);
 
-		// LandMonster landMonster1 = new LandMonster(0, 0, 1200);
-		LandMonster landMonster2 = new LandMonster(speed/3, 300, 450);
-		LandMonster landMonster3 = new LandMonster(-speed/3, 700, 850);
-		LandMonster landMonster4 = new LandMonster(speed/3, 950, 1100);
+		LandMonster landMonster2 = new LandMonster(speed*2, 300, 450);
+		LandMonster landMonster3 = new LandMonster(-speed, 700, 850);
+		LandMonster landMonster4 = new LandMonster(speed, 950, 1100);
 
-		// addObject(landMonster1, 250, 670);
 		addObject(landMonster2, 400, 670);
 		addObject(landMonster3, 850, 670);
 		addObject(landMonster4, 950, 670);

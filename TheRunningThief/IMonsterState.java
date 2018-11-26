@@ -1,11 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of interface IThiefState here.
+ * Write a description of interface IMonsterState here.
  * 
  * @author (Wenyan He) 
  * @version (version 1)
  */
-public interface IThiefState {
-    public void toggleState(Thief thief);    
+public interface IMonsterState {
+    public void toggleState(LandMonster monster);    
 }

@@ -26,8 +26,8 @@ public class Level2R2 extends GamePage {
 		DiamondLabel diamondLabel = new DiamondLabel();
 		addObject(diamondLabel, 817, 28);
 
-		OneDirectionLandMonster landMonster1 = new OneDirectionLandMonster(-speed/3);
-		OneDirectionLandMonster landMonster2 = new OneDirectionLandMonster(-speed/3);
+		OneDirectionLandMonster landMonster1 = new OneDirectionLandMonster(-speed);
+		OneDirectionLandMonster landMonster2 = new OneDirectionLandMonster(-speed/2);
 
 		addObject(landMonster1, 1180, 670);
 		addObject(landMonster2, 580, 670);

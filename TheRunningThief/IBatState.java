@@ -1,11 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of interface IThiefState here.
+ * Write a description of interface IBatState here.
  * 
  * @author (Wenyan He) 
  * @version (version 1)
  */
-public interface IThiefState {
-    public void toggleState(Thief thief);    
+public interface IBatState {
+    public void toggleState(Bat bat);    
 }
