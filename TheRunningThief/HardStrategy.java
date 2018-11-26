@@ -8,9 +8,9 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HardStrategy implements IStrategy{
 	/**
-	 * setSpeed can set actors' speed.
+	 * diffDegree can change actors' speed.
 	 */
-	public int getSpeed(){
-		return 6;
+	public int diffDegree(){
+		return 2;
 	}
 }

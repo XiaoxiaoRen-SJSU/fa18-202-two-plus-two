@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=OneDirectionLandMonster
+comment0.text=\n\ Write\ a\ description\ of\ class\ OneDirectionLandMonster\ here.\n\ \n\ @author\ (Wenyan\ He)\n\ @version\ (version\ 1)\n
+comment1.params=monsterSpeed
+comment1.target=OneDirectionLandMonster(double)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ OneDirectionLandMonster\ wants\ to\ do.\ This\ method\ is\n\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+numComments=3

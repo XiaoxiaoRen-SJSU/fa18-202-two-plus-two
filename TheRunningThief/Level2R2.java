@@ -18,7 +18,7 @@ public class Level2R2 extends GamePage {
 
 	public void prepare() {
 		IStrategy s = GameModeSingleton.getInstance().getStrategy();
-		int speed = s.getSpeed();
+		int speed = 1 * s.diffDegree();
 
 		addObject(thief, 136, 630);
 		addObject(score, 819, 79);
@@ -27,7 +27,7 @@ public class Level2R2 extends GamePage {
 		addObject(diamondLabel, 817, 28);
 
 		OneDirectionLandMonster landMonster1 = new OneDirectionLandMonster(-speed);
-		OneDirectionLandMonster landMonster2 = new OneDirectionLandMonster(-speed/2);
+		OneDirectionLandMonster landMonster2 = new OneDirectionLandMonster(-speed);
 
 		addObject(landMonster1, 1180, 670);
 		addObject(landMonster2, 580, 670);

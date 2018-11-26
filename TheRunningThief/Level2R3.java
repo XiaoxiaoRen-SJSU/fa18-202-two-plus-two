@@ -18,7 +18,7 @@ public class Level2R3 extends GamePage {
 
 	public void prepare() {
 		IStrategy s = GameModeSingleton.getInstance().getStrategy();
-		int speed = s.getSpeed()/3;
+		int speed = 1 * s.diffDegree();
 
 		addObject(thief, 136, 630);
 		addObject(score, 819, 79);
@@ -26,13 +26,13 @@ public class Level2R3 extends GamePage {
 		DiamondLabel diamondLabel = new DiamondLabel();
 		addObject(diamondLabel, 817, 28);
 
-		Bat bat1 = new Bat(speed*3, 30, 1170);
-		Bat bat2 = new Bat(-speed*3, 30, 1170);
+		Bat bat1 = new Bat(speed, 30, 1170);
+		Bat bat2 = new Bat(-speed, 30, 1170);
 
 		addObject(bat1, 30, 100);
 		addObject(bat2, 1170, 250);
 
-		LandMonster landMonster2 = new LandMonster(speed*2, 300, 450);
+		LandMonster landMonster2 = new LandMonster(speed, 300, 450);
 		LandMonster landMonster3 = new LandMonster(-speed, 700, 850);
 		LandMonster landMonster4 = new LandMonster(speed, 950, 1100);
 

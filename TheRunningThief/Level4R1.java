@@ -18,6 +18,9 @@ public class Level4R1 extends GamePage {
     }
 
     public void prepare() {
+        IStrategy s = GameModeSingleton.getInstance().getStrategy();
+        int speed = 3 * s.diffDegree();
+
         addObject(thief, 136, 630);
         addObject(score, 819, 79);
 
@@ -27,12 +30,11 @@ public class Level4R1 extends GamePage {
         RedButton redButton1 = new RedButton();
         RedButton redButton2 = new RedButton();
         RedButton redButton3 = new RedButton();
-        IStrategy s = GameModeSingleton.getInstance().getStrategy();
-        int downSpeed = s.getSpeed();
+        
 
-        SwordDown swordDown1 = new SwordDown(false, 0, 0, 1200, downSpeed);
-        SwordDown swordDown2 = new SwordDown(false, 0, 0, 1200, downSpeed);
-        SwordDown swordDown3 = new SwordDown(false, 0, 0, 1200, downSpeed);
+        SwordDown swordDown1 = new SwordDown(false, 0, 0, 1200, speed);
+        SwordDown swordDown2 = new SwordDown(false, 0, 0, 1200, speed);
+        SwordDown swordDown3 = new SwordDown(false, 0, 0, 1200, speed);
 
         redButton1.attach(swordDown1);
         redButton2.attach(swordDown2);
