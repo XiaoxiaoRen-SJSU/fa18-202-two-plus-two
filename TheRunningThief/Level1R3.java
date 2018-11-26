@@ -23,19 +23,15 @@ public class Level1R3 extends GamePage {
 		DiamondLabel diamondLabel = new DiamondLabel();
 		addObject(diamondLabel, 817, 28);
 
-		BombUp bombUp1 = new BombUp(true, 1, 675, 685);
-		BombUp bombUp2 = new BombUp(true, 1, 675, 685);
-		BombUp bombUp3 = new BombUp(true, 1, 675, 685);
+		BombUp bombUp1 = new BombUp(true, 1, 575, 685);
 
-		addObject(bombUp1, 400, 680);
-		addObject(bombUp2, 600, 680);
-		addObject(bombUp3, 800, 680);
+		addObject(bombUp1, 500, 680);
 
 		SwordUp swordUp1 = new SwordUp(false, 1, 0, 1200);
 		SwordUp swordUp2 = new SwordUp(false, 1, 0, 1200);
 
 		addObject(swordUp1, 300, 770);
-		addObject(swordUp2, 1000, 770);
+		addObject(swordUp2, 900, 770);
 
 		swordUp1.buttonEvent();
 		swordUp2.buttonEvent();
@@ -48,26 +44,15 @@ public class Level1R3 extends GamePage {
 		Diamond diamond6 = new Diamond();
 		Diamond diamond7 = new Diamond();
 		Diamond diamond8 = new Diamond();
-		Diamond diamond9 = new Diamond();
-		Diamond diamond10 = new Diamond();
-		Diamond diamond11 = new Diamond();
-		Diamond diamond12 = new Diamond();
 
-		addObject(diamond1, 250, 550);
+		addObject(diamond1, 250, 500);
 		addObject(diamond2, 300, 500);
-		addObject(diamond3, 350, 550);
-
-		addObject(diamond4, 450, 450);
-		addObject(diamond5, 500, 400);
-		addObject(diamond6, 550, 450);
-
-		addObject(diamond7, 700, 450);
-		addObject(diamond8, 750, 400);
-		addObject(diamond9, 800, 450);
-
-		addObject(diamond10, 900, 550);
-		addObject(diamond11, 950, 500);
-		addObject(diamond12, 1000, 550);
+		addObject(diamond3, 650, 630);
+		addObject(diamond4, 700, 630);
+		addObject(diamond5, 675, 600);
+		addObject(diamond6, 1050, 400);
+		addObject(diamond7, 1050, 500);
+		addObject(diamond8, 1050, 600);
 
 		setPaintOrder(Thief.class, Diamond.class, DiamondLabel.class, SwordUp.class, BombUp.class);
 	}
