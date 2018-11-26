@@ -49,9 +49,11 @@
 ## Week 4
 
 * What tasks I worked on:
-
+  - Implemented state pattern design to Thief, Bat, LandMonster classes
+  - Merged teammates' work with my own
 * What I plan to work on next:
-
-* What tasks are blocked waiting on another team member:
+  - To fine-tune the game and put the finishing touches (such as visual and
+    sound effects) to it
+* What tasks are blocked waiting on another team member: N/A
 
 * XP Core Value I keep:
