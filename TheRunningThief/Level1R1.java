@@ -12,6 +12,7 @@ public class Level1R1 extends GamePage {
 	 * Constructor for objects of class Level1R1.
 	 * 
 	 */
+	private IStrategy strategy;
 	public Level1R1() {
 		super();
 	}
@@ -23,8 +24,11 @@ public class Level1R1 extends GamePage {
 		DiamondLabel diamondLabel = new DiamondLabel();
 		addObject(diamondLabel, 817, 28);
 
-		BombDown bombDown1 = new BombDown(false, 1, 0, 1200);
-		BombDown bombDown2 = new BombDown(false, 1, 0, 1200);
+		IStrategy s = GameModeSingleton.getInstance().getStrategy();
+		int downSpeed = s.getSpeed();
+
+		BombDown bombDown1 = new BombDown(false, 1, 0, 1200, downSpeed);
+		BombDown bombDown2 = new BombDown(false, 1, 0, 1200, downSpeed);
 
 		addObject(bombDown1, 400, 10);
 		addObject(bombDown2, 800, 10);

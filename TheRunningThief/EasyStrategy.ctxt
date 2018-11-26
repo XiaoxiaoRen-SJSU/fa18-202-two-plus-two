@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=EasyStrategy
+comment0.text=\n\ Write\ a\ description\ of\ interface\ IStrategy\ here.\n\ \n\ @author\ (Min\ Lu)\n\ @version\ (11/25/2018)\n
+comment1.params=
+comment1.target=int\ getSpeed()
+comment1.text=\n\ setSpeed\ can\ set\ actors'\ speed.\n
+numComments=2

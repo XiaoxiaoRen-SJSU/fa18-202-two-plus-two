@@ -13,13 +13,15 @@ public class BombDown extends Actor implements IButtonEventObserver {
 	int speed;
 	int leftBound;
 	int rightBound;
+	int downSpeed;
 
-	public BombDown(boolean _shouldMove, int _speed, int _leftBound, int _rightBound) {
+	public BombDown(boolean _shouldMove, int _speed, int _leftBound, int _rightBound,int _downSpeed) {
 		shouldFall = false;
 		shouldMove = _shouldMove;
 		speed = _speed;
 		leftBound = _leftBound;
 		rightBound = _rightBound;
+		downSpeed = _downSpeed;
 	}
 
 	public void buttonEvent() {
@@ -35,9 +37,9 @@ public class BombDown extends Actor implements IButtonEventObserver {
 			if (getX() == leftBound || getX() == rightBound) {
 				speed = -speed;
 			}
-			setLocation(getX() + speed, getY() + 4);
+			setLocation(getX() + speed, getY() + downSpeed );
 		} else if (shouldFall == true) {
-			setLocation(getX(), getY() + 4);
+			setLocation(getX(), getY() + downSpeed );
 		} else {
 			if (shouldMove) {
 				if (getX() == leftBound || getX() == rightBound) {

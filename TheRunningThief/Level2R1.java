@@ -17,14 +17,18 @@ public class Level2R1 extends GamePage {
 	}
 
 	public void prepare() {
+		IStrategy s = GameModeSingleton.getInstance().getStrategy();
+		int speed = s.getSpeed()/3;
+
 		addObject(thief, 136, 630);
 		addObject(score, 819, 79);
 
 		DiamondLabel diamondLabel = new DiamondLabel();
 		addObject(diamondLabel, 817, 28);
 
-		LandMonster landMonster1 = new LandMonster(1, 300, 400);
-		LandMonster landMonster2 = new LandMonster(2, 700, 950);
+		
+		LandMonster landMonster1 = new LandMonster(speed, 300, 400);
+		LandMonster landMonster2 = new LandMonster(speed, 700, 950);
 		// LandMonster landMonster3 = new LandMonster(2, 800, 950);
 
 		addObject(landMonster1, 350, 670);

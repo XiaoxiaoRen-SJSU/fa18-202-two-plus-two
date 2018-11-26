@@ -20,17 +20,20 @@ public class Level3R1 extends GamePage {
 	 * objects and add them to the world.
 	 */
 	public void prepare() {
+		IStrategy s = GameModeSingleton.getInstance().getStrategy();
+		int speed = s.getSpeed()/3;
+
 		addObject(thief, 136, 630);
 		DiamondLabel diamondLabel = new DiamondLabel();
 		addObject(diamondLabel, 817, 28);
 		// Diamond diamond = new Diamond();
 		// addObject(diamond,817,28);
 		addObject(score, 819, 79);
-		LandMonster landMonster = new LandMonster(1, 420, 460);
+		LandMonster landMonster = new LandMonster(speed, 420, 460);
 		addObject(landMonster, 440, 670);
-		LandMonster landMonster2 = new LandMonster(1, 750, 770);
+		LandMonster landMonster2 = new LandMonster(speed, 750, 770);
 		addObject(landMonster2, 760, 670);
-		LandMonster landMonster3 = new LandMonster(1, 837, 857);
+		LandMonster landMonster3 = new LandMonster(speed, 837, 857);
 		addObject(landMonster3, 847, 670);
 		Diamond diamond2 = new Diamond();
 		addObject(diamond2, 244, 688);
@@ -60,7 +63,7 @@ public class Level3R1 extends GamePage {
 		addObject(diamond14, 1027, 688);
 		Diamond diamond15 = new Diamond();
 		addObject(diamond15, 1083, 688);
-		Bat bat = new Bat(5, 245, 1100);
+		Bat bat = new Bat(speed*3, 245, 1100);
 		addObject(bat, 245, 461);
 
 		setPaintOrder(Thief.class, Diamond.class, DiamondLabel.class);

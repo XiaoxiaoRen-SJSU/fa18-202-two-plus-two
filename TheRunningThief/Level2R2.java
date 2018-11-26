@@ -17,21 +17,24 @@ public class Level2R2 extends GamePage {
 	}
 
 	public void prepare() {
+		IStrategy s = GameModeSingleton.getInstance().getStrategy();
+		int speed = s.getSpeed();
+
 		addObject(thief, 136, 630);
 		addObject(score, 819, 79);
 
 		DiamondLabel diamondLabel = new DiamondLabel();
 		addObject(diamondLabel, 817, 28);
 
-		OneDirectionLandMonster landMonster1 = new OneDirectionLandMonster(-2);
-		OneDirectionLandMonster landMonster2 = new OneDirectionLandMonster(-1);
+		OneDirectionLandMonster landMonster1 = new OneDirectionLandMonster(-speed/3);
+		OneDirectionLandMonster landMonster2 = new OneDirectionLandMonster(-speed/3);
 
 		addObject(landMonster1, 1180, 670);
 		addObject(landMonster2, 580, 670);
 
-		OneDirectionBat bat1 = new OneDirectionBat(4);
-		OneDirectionBat bat2 = new OneDirectionBat(4);
-		OneDirectionBat bat3 = new OneDirectionBat(4);
+		OneDirectionBat bat1 = new OneDirectionBat(speed);
+		OneDirectionBat bat2 = new OneDirectionBat(speed);
+		OneDirectionBat bat3 = new OneDirectionBat(speed);
 
 		addObject(bat1, 20, 250);
 		addObject(bat2, 420, 250);

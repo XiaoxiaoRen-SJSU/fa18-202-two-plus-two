@@ -9,59 +9,61 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 // Author: Yimu Yang
 public class Level4R1 extends GamePage {
 
-	/**
-	 * Constructor for objects of class Level4R1.
-	 * 
-	 */
-	public Level4R1() {
-		super();
-	}
+    /**
+     * Constructor for objects of class Level4R1.
+     * 
+     */
+    public Level4R1() {
+        super();
+    }
 
-	public void prepare() {
-		addObject(thief, 136, 630);
-		addObject(score, 819, 79);
+    public void prepare() {
+        addObject(thief, 136, 630);
+        addObject(score, 819, 79);
 
-		DiamondLabel diamondLabel = new DiamondLabel();
-		addObject(diamondLabel, 817, 28);
+        DiamondLabel diamondLabel = new DiamondLabel();
+        addObject(diamondLabel, 817, 28);
 
-		RedButton redButton1 = new RedButton();
-		RedButton redButton2 = new RedButton();
-		RedButton redButton3 = new RedButton();
+        RedButton redButton1 = new RedButton();
+        RedButton redButton2 = new RedButton();
+        RedButton redButton3 = new RedButton();
+        IStrategy s = GameModeSingleton.getInstance().getStrategy();
+        int downSpeed = s.getSpeed();
 
-		SwordDown swordDown1 = new SwordDown(false, 0, 0, 1200);
-		SwordDown swordDown2 = new SwordDown(false, 0, 0, 1200);
-		SwordDown swordDown3 = new SwordDown(false, 0, 0, 1200);
+        SwordDown swordDown1 = new SwordDown(false, 0, 0, 1200, downSpeed);
+        SwordDown swordDown2 = new SwordDown(false, 0, 0, 1200, downSpeed);
+        SwordDown swordDown3 = new SwordDown(false, 0, 0, 1200, downSpeed);
 
-		redButton1.attach(swordDown1);
-		redButton2.attach(swordDown2);
-		redButton3.attach(swordDown3);
+        redButton1.attach(swordDown1);
+        redButton2.attach(swordDown2);
+        redButton3.attach(swordDown3);
 
-		addObject(redButton1, 300, 700);
-		addObject(redButton2, 600, 700);
-		addObject(redButton3, 900, 700);
-		addObject(swordDown1, 300, 10);
-		addObject(swordDown2, 600, 10);
-		addObject(swordDown3, 900, 10);
+        addObject(redButton1, 300, 700);
+        addObject(redButton2, 600, 700);
+        addObject(redButton3, 900, 700);
+        addObject(swordDown1, 300, 10);
+        addObject(swordDown2, 600, 10);
+        addObject(swordDown3, 900, 10);
 
-		Diamond diamond1 = new Diamond();
-		Diamond diamond2 = new Diamond();
-		Diamond diamond3 = new Diamond();
-		Diamond diamond4 = new Diamond();
-		Diamond diamond5 = new Diamond();
-		Diamond diamond6 = new Diamond();
-		Diamond diamond7 = new Diamond();
-		Diamond diamond8 = new Diamond();
-		Diamond diamond9 = new Diamond();
-		Diamond diamond10 = new Diamond();
-		Diamond diamond11 = new Diamond();
-		Diamond diamond12 = new Diamond();
-		Diamond diamond13 = new Diamond();
-		Diamond diamond14 = new Diamond();
-		Diamond diamond15 = new Diamond();
+        Diamond diamond1 = new Diamond();
+        Diamond diamond2 = new Diamond();
+        Diamond diamond3 = new Diamond();
+        Diamond diamond4 = new Diamond();
+        Diamond diamond5 = new Diamond();
+        Diamond diamond6 = new Diamond();
+        Diamond diamond7 = new Diamond();
+        Diamond diamond8 = new Diamond();
+        Diamond diamond9 = new Diamond();
+        Diamond diamond10 = new Diamond();
+        Diamond diamond11 = new Diamond();
+        Diamond diamond12 = new Diamond();
+        Diamond diamond13 = new Diamond();
+        Diamond diamond14 = new Diamond();
+        Diamond diamond15 = new Diamond();
 
-		addObject(diamond1, 300, 630);
-		addObject(diamond2, 600, 630);
-		addObject(diamond3, 900, 630);
+        addObject(diamond1, 300, 630);
+        addObject(diamond2, 600, 630);
+        addObject(diamond3, 900, 630);
 
 		addObject(diamond4, 385, 550);
 		addObject(diamond5, 450, 550);

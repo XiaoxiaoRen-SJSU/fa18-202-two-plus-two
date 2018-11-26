@@ -25,12 +25,15 @@ public class Level4R3 extends GamePage {
 
 		RedButton redButton1 = new RedButton();
 
-		SwordDown swordDown1 = new SwordDown(true, -2, 400, 600);
-		SwordDown swordDown2 = new SwordDown(true, -2, 450, 650);
-		SwordDown swordDown3 = new SwordDown(true, -2, 500, 700);
-		SwordDown swordDown4 = new SwordDown(true, 2, 600, 800);
-		SwordDown swordDown5 = new SwordDown(true, 2, 650, 850);
-		SwordDown swordDown6 = new SwordDown(true, 2, 700, 900);
+		IStrategy s = GameModeSingleton.getInstance().getStrategy();
+        int downSpeed = s.getSpeed();
+
+		SwordDown swordDown1 = new SwordDown(true, -2, 400, 600, downSpeed);
+		SwordDown swordDown2 = new SwordDown(true, -2, 450, 650, downSpeed);
+		SwordDown swordDown3 = new SwordDown(true, -2, 500, 700, downSpeed);
+		SwordDown swordDown4 = new SwordDown(true, 2, 600, 800, downSpeed);
+		SwordDown swordDown5 = new SwordDown(true, 2, 650, 850, downSpeed);
+		SwordDown swordDown6 = new SwordDown(true, 2, 700, 900, downSpeed);
 
 		redButton1.attach(swordDown1);
 		redButton1.attach(swordDown2);

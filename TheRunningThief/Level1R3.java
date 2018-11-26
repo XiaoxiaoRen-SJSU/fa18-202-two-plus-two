@@ -27,14 +27,17 @@ public class Level1R3 extends GamePage {
 
 		addObject(bombUp1, 500, 680);
 
-		SwordUp swordUp1 = new SwordUp(false, 1, 0, 1200);
-		SwordUp swordUp2 = new SwordUp(false, 1, 0, 1200);
+		IStrategy s = GameModeSingleton.getInstance().getStrategy();
+		int downSpeed = s.getSpeed();
 
-		addObject(swordUp1, 300, 770);
-		addObject(swordUp2, 900, 770);
+		SwordDown swordDown1 = new SwordDown(false, 1, 0, 1200, downSpeed);
+		SwordDown swordDown2 = new SwordDown(false, 1, 0, 1200, downSpeed);
 
-		swordUp1.buttonEvent();
-		swordUp2.buttonEvent();
+		addObject(swordDown1, 300, 770);
+		addObject(swordDown2, 900, 770);
+
+		swordDown1.buttonEvent();
+		swordDown2.buttonEvent();
 
 		Diamond diamond1 = new Diamond();
 		Diamond diamond2 = new Diamond();

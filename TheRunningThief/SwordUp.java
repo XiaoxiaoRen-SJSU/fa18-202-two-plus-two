@@ -13,13 +13,15 @@ public class SwordUp extends Actor implements IButtonEventObserver {
 	int speed;
 	int leftBound;
 	int rightBound;
+	int upSpeed;
 
-	public SwordUp(boolean _shouldMove, int _speed, int _leftBound, int _rightBound) {
+	public SwordUp(boolean _shouldMove, int _speed, int _leftBound, int _rightBound, int _upSpeed) {
 		shouldFall = false;
 		shouldMove = _shouldMove;
 		speed = _speed;
 		leftBound = _leftBound;
 		rightBound = _rightBound;
+		upSpeed = _upSpeed;
 	}
 
 	public void buttonEvent() {
@@ -32,7 +34,7 @@ public class SwordUp extends Actor implements IButtonEventObserver {
 	 */
 	public void act() {
 		if (shouldFall == true) {
-			setLocation(getX(), getY() - 4);
+			setLocation(getX(), getY() - upSpeed);
 		} else {
 			if (shouldMove) {
 				if (getX() == leftBound || getX() == rightBound) {

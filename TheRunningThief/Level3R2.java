@@ -21,11 +21,14 @@ public class Level3R2 extends GamePage {
 	 * objects and add them to the world.
 	 */
 	public void prepare() {
+		IStrategy s = GameModeSingleton.getInstance().getStrategy();
+		int speed = s.getSpeed()/3;
+
 		addObject(thief, 136, 630);
 		DiamondLabel diamondLabel = new DiamondLabel();
 		addObject(diamondLabel, 817, 28);
 		addObject(score, 819, 79);
-		LandMonster landMonster = new LandMonster(1, 274, 513);
+		LandMonster landMonster = new LandMonster(speed, 274, 513);
 		addObject(landMonster, 395, 689);
 		Key key = new Key(1, 394, 396);
 		addObject(key, 394, 441);

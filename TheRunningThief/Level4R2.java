@@ -27,9 +27,12 @@ public class Level4R2 extends GamePage {
 		RedButton redButton1 = new RedButton();
 		RedButton redButton2 = new RedButton();
 
-		SwordDown swordDown1 = new SwordDown(true, -1, 400, 600);
-		SwordDown swordDown2 = new SwordDown(true, 1, 450, 650);
-		SwordDown swordDown3 = new SwordDown(true, 1, 700, 900);
+		IStrategy s = GameModeSingleton.getInstance().getStrategy();
+        int downSpeed = s.getSpeed();
+
+		SwordDown swordDown1 = new SwordDown(true, -1, 400, 600, downSpeed);
+		SwordDown swordDown2 = new SwordDown(true, 1, 450, 650, downSpeed);
+		SwordDown swordDown3 = new SwordDown(true, 1, 700, 900, downSpeed);
 
 		redButton1.attach(swordDown1);
 		redButton1.attach(swordDown2);

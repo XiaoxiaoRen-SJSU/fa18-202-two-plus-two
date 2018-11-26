@@ -23,8 +23,12 @@ public class Level1R2 extends GamePage {
 		DiamondLabel diamondLabel = new DiamondLabel();
 		addObject(diamondLabel, 817, 28);
 
-		SwordUp swordUp1 = new SwordUp(false, 1, 0, 1200);
-		SwordUp swordUp2 = new SwordUp(false, 1, 0, 1200);
+		IStrategy s = GameModeSingleton.getInstance().getStrategy();
+		int upSpeed = s.getSpeed();
+
+		
+		SwordUp swordUp1 = new SwordUp(false, 1, 0, 1200, upSpeed);
+		SwordUp swordUp2 = new SwordUp(false, 1, 0, 1200, upSpeed);
 
 		addObject(swordUp1, 400, 770);
 		addObject(swordUp2, 800, 770);
