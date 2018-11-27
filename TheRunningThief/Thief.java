@@ -101,6 +101,9 @@ public class Thief extends Actor {
                 int index = (worldCtrl.getPageChain()).indexOf((GamePage) getWorld());
                 if (index + 2 == worldCtrl.getPageChain().size()) {
                     GreenfootSound successMusic = new GreenfootSound("success.wav");
+                    // added by Wenyan He to replace background music with
+                    // success music
+                    backgroundMusic.stop();
                     successMusic.play();
                 }
                 if ((index + 1) % 3 == 0 && (index + 1) / 3 == 1) {
