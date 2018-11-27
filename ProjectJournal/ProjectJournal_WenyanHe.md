@@ -24,6 +24,7 @@
 
 * What tasks I worked on:
   - Started coding for game page of Level 2 (which is my own share)
+  - Studied state design pattern and its application in the project at hand
 * What I plan to work on next:
   - To implement state pattern design across the board
 * What tasks are blocked waiting on another team member: N/A
@@ -49,11 +50,12 @@
 ## Week 4
 
 * What tasks I worked on:
-  - Implemented state pattern design to Thief, Bat, LandMonster classes
-  - Merged teammates' work with my own
+  - Implemented state pattern design for Thief, Bat, LandMonster classes to
+    account for an object of the three classes facing either left or right
+  - Resolved internal conflict between teammates' work and my own
 * What I plan to work on next:
-  - To fine-tune the game and put the finishing touches (such as visual and
-    sound effects) to it
+  - To fine-tune the game and put the finishing touches to it by improving
+    visual and sound effects
 * What tasks are blocked waiting on another team member: N/A
 
 * XP Core Value I keep:
