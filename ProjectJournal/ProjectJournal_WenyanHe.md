@@ -54,8 +54,8 @@
     account for an object of the three classes facing either left or right
   - Resolved internal conflict between teammates' work and my own
 * What I plan to work on next:
-  - To fine-tune the game and put the finishing touches (such as visual and
-    sound effects) to it
+  - To fine-tune the game and put the finishing touches to it by improving
+    visual and sound effects
 * What tasks are blocked waiting on another team member: N/A
 
 * XP Core Value I keep:
