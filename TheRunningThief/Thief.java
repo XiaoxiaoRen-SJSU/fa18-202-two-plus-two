@@ -86,7 +86,7 @@ public class Thief extends Actor {
     // by actor
     private void checkButton() {
         if (isTouching(RedButton.class)) {
-            GreenfootSound redButtonMusic = new GreenfootSound("easyhardmodebutton.mp3");
+            GreenfootSound redButtonMusic = new GreenfootSound("redbutton1.mp3");
             redButtonMusic.play();
             Actor actor = getOneIntersectingObject(RedButton.class);
             actor.setImage("whiteButton.png");
