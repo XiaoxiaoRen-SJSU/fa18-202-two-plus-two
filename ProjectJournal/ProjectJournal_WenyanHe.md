@@ -59,5 +59,5 @@
 * What tasks are blocked waiting on another team member: N/A
 
 * XP Core Value I keep:
-  - Coodination with teammate to pinpoint and resolve incompatibility among
+  - Coodination with teammates to pinpoint and resolve incompatibility among
     different aspects of the whole probject
