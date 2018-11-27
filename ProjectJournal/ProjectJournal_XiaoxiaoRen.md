@@ -54,18 +54,35 @@
 
 * What tasks I worked on:
 
+  * Refine level 3 code.
+  * Add game music for background and part of characters.
+
 * What I plan to work on next:
+
+  * Finish command patter.
+  * Add other music.
+  * Make Ad video.
 
 * What tasks are blocked waiting on another team member:
 
+  * Wait for state patter and strategy pattern finish.
+
 * XP Core Value I keep:
+
+  **Feedback** : Provide feedback to each other about the difficulties of each level.
 
 ## Week 4
 
 * What tasks I worked on:
 
-* What I plan to work on next:
+  * Finish command patter.
+  * Add all other music.
+  * Make Ad video.
 
-* What tasks are blocked waiting on another team member:
+* What I plan to work on next: N/A
+
+* What tasks are blocked waiting on another team member: N/A
 
 * XP Core Value I keep:
+
+  **Feedback** : Provide feedback to each other about UML diagrams and Ad video.
