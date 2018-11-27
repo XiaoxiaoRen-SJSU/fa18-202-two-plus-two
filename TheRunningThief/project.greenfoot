@@ -1,4 +1,5 @@
 #Greenfoot project file
+class.Arrow.image=arrow.png
 class.Bat.image=Bat.png
 class.BombDown.image=Bomb.png
 class.BombUp.image=Bomb.png

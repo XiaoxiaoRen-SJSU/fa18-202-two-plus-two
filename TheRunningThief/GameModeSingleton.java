@@ -17,7 +17,7 @@ public class GameModeSingleton {
         return instance;
     }
 
-    public IStrategy strategy;
+    public IStrategy strategy = new EasyStrategy();
 
     public IStrategy getStrategy() {
         return strategy;

@@ -38,6 +38,10 @@ public class HomePage extends World {
 		addObject(easyModeButton, 309, 686);
 		HardModeButton hardModeButton = new HardModeButton();
 		addObject(hardModeButton, 509, 686);
+
+		Arrow arrow = new Arrow();
+		addObject(arrow, 309, 745);
+
 		Title title = new Title();
 		addObject(title, 812, 127);
 
