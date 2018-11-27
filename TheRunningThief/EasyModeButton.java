@@ -7,6 +7,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class EasyModeButton extends Actor{
+	GreenfootSound playGameMusic = new GreenfootSound("easyhardmodebutton.mp3");
 	/**
 	 * Act - do whatever the EasyModeButton wants to do. This method is called
 	 * whenever the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,6 +21,7 @@ public class EasyModeButton extends Actor{
 
 		if (Greenfoot.mouseClicked(this)) {
 			GameModeSingleton.getInstance().setStrategy(new EasyStrategy());
+			playGameMusic.play();
 		}
 	}
 }

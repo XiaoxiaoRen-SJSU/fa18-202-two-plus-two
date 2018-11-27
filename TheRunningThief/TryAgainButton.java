@@ -8,6 +8,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TryAgainButton extends Actor {
 	IScreenInvoker reStart = new ScreenInvoker();
+	GreenfootSound playGameMusic = new GreenfootSound("playGameButton.wav");
 
 	public void setCommand(IScreenCommand c) {
 		reStart.setCommand(c);
@@ -21,7 +22,8 @@ public class TryAgainButton extends Actor {
 		}
 
 		if (Greenfoot.mouseClicked(this)) {
-			reStart.invoke();
+		    playGameMusic.play();
+		    reStart.invoke();
 		}
 	}
 

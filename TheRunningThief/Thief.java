@@ -8,6 +8,10 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  *          6:00pm PST added isTouching( RotatingBomb.class ) block
  */
 public class Thief extends Actor {
+
+    private IScreenCommand continueCmd;
+    private IScreenCommand exitCmd;
+
     GreenfootSound backgroundMusic = new GreenfootSound("background.mp3");
     // Create by Xiaoxiao Ren. Implement Singleton Pattern.
     private static Thief thief;
@@ -17,6 +21,10 @@ public class Thief extends Actor {
 
     private Thief() {
         backgroundMusic.playLoop();
+        continueCmd = new ScreenCommand();
+        exitCmd = new ScreenCommand();
+        setReceiverContinue();
+        setReceiverExit();
     }
 
     public static Thief getThief() {
@@ -50,7 +58,7 @@ public class Thief extends Actor {
         checkDie();
         checkMove();
         checkDiamond();
-        changePage();
+        checkPage();
         checkKey();
         // Added By Yimu Yang
         checkButton();
@@ -78,7 +86,7 @@ public class Thief extends Actor {
     // by actor
     private void checkButton() {
         if (isTouching(RedButton.class)) {
-            GreenfootSound redButtonMusic = new GreenfootSound("RedButton.wav");
+            GreenfootSound redButtonMusic = new GreenfootSound("easyhardmodebutton.mp3");
             redButtonMusic.play();
             Actor actor = getOneIntersectingObject(RedButton.class);
             actor.setImage("whiteButton.png");
@@ -87,17 +95,61 @@ public class Thief extends Actor {
     }
 
     // Create by Xiaoxiao Ren. Change page function.
-    private void changePage() {
+    private void checkPage() {
         if (getX() >= getWorld().getWidth() - 20) {
             if (worldCtrl != null) {
                 int index = (worldCtrl.getPageChain()).indexOf((GamePage) getWorld());
-                if (index != worldCtrl.getPageChain().size() - 1) {
-                    GamePage nextWorld = worldCtrl.getPageChain().get(index + 1);
-                    nextWorld.prepare();
-                    Greenfoot.setWorld(nextWorld);
+                if (index + 2 == worldCtrl.getPageChain().size()) {
+                    GreenfootSound successMusic = new GreenfootSound("success.wav");
+                    successMusic.play();
+                }
+                if ((index + 1) % 3 == 0 && (index + 1) / 3 == 1) {
+                    DialogLevel2 dl2 = new DialogLevel2();
+                    ContinueButton cb2 = new ContinueButton();
+                    ExitButton eb2 = new ExitButton();
+                    cb2.setScreenItem(continueCmd);
+                    eb2.setScreenItem(exitCmd);
+                    World world = getWorld();
+                    world.addObject(dl2, 610, 400);
+                    world.addObject(cb2, 720, 460);
+                    world.addObject(eb2, 500, 460);
+                } else if ((index + 1) % 3 == 0 && (index + 1) / 3 == 2) {
+                    DialogLevel3 dl3 = new DialogLevel3();
+                    ContinueButton cb3 = new ContinueButton();
+                    ExitButton eb3 = new ExitButton();
+                    cb3.setScreenItem(continueCmd);
+                    eb3.setScreenItem(exitCmd);
+                    World world = getWorld();
+                    world.addObject(dl3, 610, 400);
+                    world.addObject(cb3, 720, 460);
+                    world.addObject(eb3, 500, 460);
+                } else if ((index + 1) % 3 == 0 && (index + 1) / 3 == 3) {
+                    DialogLevel4 dl4 = new DialogLevel4();
+                    ContinueButton cb4 = new ContinueButton();
+                    ExitButton eb4 = new ExitButton();
+                    cb4.setScreenItem(continueCmd);
+                    eb4.setScreenItem(exitCmd);
+                    World world = getWorld();
+                    world.addObject(dl4, 610, 400);
+                    world.addObject(cb4, 720, 460);
+                    world.addObject(eb4, 500, 460);
+                } else {
+                    switchPage();
                 }
             }
         }
+    }
+    
+    // Create by Xiaoxiao Ren. Function to switch page.
+    public void switchPage() {
+        if (worldCtrl != null) {
+            int index = (worldCtrl.getPageChain()).indexOf((GamePage) getWorld());
+            if (index != worldCtrl.getPageChain().size() - 1) {
+                GamePage nextWorld = worldCtrl.getPageChain().get(index + 1);
+                nextWorld.prepare();
+                Greenfoot.setWorld(nextWorld);
+            }
+        }   
     }
 
     // Create by Xiaoxiao Ren. Check if the thief get a diamond.
@@ -327,5 +379,24 @@ public class Thief extends Actor {
     // Added by Wenyan He for state pattern implementation
     public void setState(IThiefState state) {
         thiefState = state;
+    }
+
+    private void setReceiverContinue() {
+        continueCmd.setReceiver(new IScreenReceiver() {
+            /** Command Action */
+            public void doAction() {
+                Thief thief = Thief.getThief();
+                thief.switchPage();
+            }
+        });
+    }
+
+    private void setReceiverExit() {
+        exitCmd.setReceiver(new IScreenReceiver() {
+            /** Command Action */
+            public void doAction() {
+                Greenfoot.setWorld(new HomePage());
+            }
+        });
     }
 }

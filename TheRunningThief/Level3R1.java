@@ -21,7 +21,7 @@ public class Level3R1 extends GamePage {
 	 */
 	public void prepare() {
 		IStrategy s = GameModeSingleton.getInstance().getStrategy();
-		int speed = 1 * s.diffDegree();
+		int speed = 3 * s.diffDegree();
 
 		addObject(thief, 136, 630);
 		DiamondLabel diamondLabel = new DiamondLabel();
