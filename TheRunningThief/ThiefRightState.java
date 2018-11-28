@@ -7,9 +7,11 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (version 1)
  */
 public class ThiefRightState implements IThiefState {
-	public void toggleState(Thief thief) {
-		thief.reverseDirection();
-		thief.setImage("left.png");
-		thief.setState(new ThiefLeftState());
-	}
+    public void nextState(Thief thief) {
+        if (Greenfoot.isKeyDown("left")) {
+            thief.reverseDirection();
+            thief.setImage("left.png");
+            thief.setState(new ThiefLeftState());
+        }
+    }
 }

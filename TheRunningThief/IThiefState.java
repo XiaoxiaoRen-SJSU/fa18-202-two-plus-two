@@ -7,5 +7,5 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (version 1)
  */
 public interface IThiefState {
-	public void toggleState(Thief thief);
+	public void nextState(Thief thief);
 }

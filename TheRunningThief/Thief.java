@@ -308,8 +308,7 @@ public class Thief extends Actor {
             } else {
                 if (Greenfoot.isKeyDown("right")) {
                     // added by Wenyan He for state pattern implementation
-                    if (HSpeed < 0) // thief now facing left, or in Left State
-                        thiefState.toggleState(this);
+                    thiefState.nextState(this);
                     setLocation(getX() + HSpeed, getY());
                 }
             }
@@ -317,17 +316,15 @@ public class Thief extends Actor {
         } else {
             if (Greenfoot.isKeyDown("right")) {
                 // added by Wenyan He for state pattern implementation
-                if (HSpeed < 0) // thief now facing left, or in Left State
-                    thiefState.toggleState(this);
+                thiefState.nextState(this);
                 setLocation(getX() + HSpeed, getY());
             }
         }
 
         if (Greenfoot.isKeyDown("left")) {
             // added by Wenyan He for state pattern implementation
-            if (HSpeed > 0) // thief now facing right, or in Right State
-                thiefState.toggleState(this);
-            setLocation(getX() + HSpeed, getY()); // plus needs further check
+            thiefState.nextState(this);
+            setLocation(getX() + HSpeed, getY());
         }
 
         if (Greenfoot.isKeyDown("space")) {
