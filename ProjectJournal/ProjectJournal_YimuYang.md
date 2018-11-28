@@ -76,6 +76,8 @@
 * What tasks I worked on:
 	
 	* Clean up remaining bugs in the game.
+	* Draw Class Diagram for the entire game.
+	* Draw Class Diagram for level 4 for demo.
 
 * What I plan to work on next:
 	
