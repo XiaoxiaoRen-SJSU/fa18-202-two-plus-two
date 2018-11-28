@@ -74,9 +74,18 @@
 ## Week 4
 
 * What tasks I worked on:
+	
+	* Clean up remaining bugs in the game.
 
 * What I plan to work on next:
+	
+	* Finish class diagram.
 
 * What tasks are blocked waiting on another team member:
 
+	* N/A
+
 * XP Core Value I keep:
+
+	* Communication and Simplicity.
+
