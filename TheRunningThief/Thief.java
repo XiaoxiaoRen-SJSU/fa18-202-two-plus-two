@@ -89,7 +89,7 @@ public class Thief extends Actor {
             Actor actor = getOneIntersectingObject(RedButton.class);
             
             if (!actor.isAtEdge()) {
-                GreenfootSound redButtonMusic = new GreenfootSound("redbutton2.mp3");
+                GreenfootSound redButtonMusic = new GreenfootSound("redbutton3.wav");
                 redButtonMusic.play();
             }
 
