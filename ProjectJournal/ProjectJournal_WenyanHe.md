@@ -12,6 +12,7 @@
 
 * What tasks I worked on:
   - Found out what the project was all about
+  - Dabbled in use case analysis to grasp the big picture
   - Participated in discussion with teammate over design ideas
 * What I plan to work on next:
   - To get a clear handle on my assignment and responsibilities
@@ -53,6 +54,7 @@
   - Implemented state pattern design for Thief, Bat, LandMonster classes to
     account for an object of the three classes facing either left or right
   - Resolved internal conflict between teammates' work and my own
+  - Finalized use case specification
 * What I plan to work on next:
   - To fine-tune the game and put the finishing touches to it by improving
     visual and sound effects
