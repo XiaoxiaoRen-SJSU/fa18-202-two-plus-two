@@ -12,12 +12,12 @@
 
 * What tasks I worked on:
 	
-	* Implement level 4 code.
-	* Implement observer pattern within level 4.
+	* Implemented level 4 code.
+	* Implemented observer pattern within level 4.
 
 * What I plan to work on next:
 
-	* Adjust level 4 code.
+	* Modify level 4 code.
 	* Implement "Game Over" page.
 
 * What tasks are blocked waiting on another team member:
@@ -57,7 +57,7 @@
 
 * What tasks I worked on:
 	
-	* Keep modifing level 4 to make the game more playable.
+	* Modified level 4 to make the game more playable.
 
 * What I plan to work on next:
 
@@ -75,9 +75,10 @@
 
 * What tasks I worked on:
 	
-	* Clean up remaining bugs in the game.
-	* Draw Class Diagram for the entire game.
-	* Draw Class Diagram for level 4 for demo.
+	* Cleaned up remaining bugs in the game.
+	* Drew Class Diagram for the entire game.
+	* Drew Class Diagram for level 4 for demo.
+	* Helped record and make youtube game video.
 
 * What I plan to work on next:
 	
