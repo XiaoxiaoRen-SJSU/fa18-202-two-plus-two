@@ -26,7 +26,6 @@ public class Level1R2 extends GamePage {
 		DiamondLabel diamondLabel = new DiamondLabel();
 		addObject(diamondLabel, 817, 28);
 
-		
 		SwordUp swordUp1 = new SwordUp(false, 1, 0, 1200, speed);
 		SwordUp swordUp2 = new SwordUp(false, 1, 0, 1200, speed);
 

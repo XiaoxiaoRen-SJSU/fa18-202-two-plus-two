@@ -18,7 +18,7 @@ public class Level4R3 extends GamePage {
 
 	public void prepare() {
 		IStrategy s = GameModeSingleton.getInstance().getStrategy();
-        int speed = 3 * s.diffDegree();
+		int speed = 3 * s.diffDegree();
 
 		addObject(thief, 136, 630);
 		addObject(score, 819, 79);
@@ -87,7 +87,8 @@ public class Level4R3 extends GamePage {
 		addObject(diamond11, 300, 500);
 		addObject(diamond12, 400, 500);
 
-		setPaintOrder(Thief.class, Key.class, Diamond.class, DiamondLabel.class, SwordDown.class, RedButton.class, Door.class);
+		setPaintOrder(Thief.class, Key.class, Diamond.class, DiamondLabel.class, SwordDown.class, RedButton.class,
+				Door.class);
 	}
 
 }

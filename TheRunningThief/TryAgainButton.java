@@ -22,8 +22,8 @@ public class TryAgainButton extends Actor {
 		}
 
 		if (Greenfoot.mouseClicked(this)) {
-		    playGameMusic.play();
-		    reStart.invoke();
+			playGameMusic.play();
+			reStart.invoke();
 		}
 	}
 

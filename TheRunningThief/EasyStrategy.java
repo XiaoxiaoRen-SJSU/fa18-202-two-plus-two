@@ -6,11 +6,11 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (Min Lu)
  * @version (11/25/2018)
  */
-public class EasyStrategy implements IStrategy{
+public class EasyStrategy implements IStrategy {
 	/**
 	 * diffDegree can change actors' speed.
 	 */
-	public int diffDegree(){
+	public int diffDegree() {
 		return 1;
 	}
 }

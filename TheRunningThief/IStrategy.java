@@ -6,7 +6,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (Min Lu)
  * @version (11/25/2018)
  */
-public interface IStrategy{
+public interface IStrategy {
 	/**
 	 * diffDegree can change actors' speed.
 	 */

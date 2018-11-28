@@ -1,29 +1,29 @@
 public class GameModeSingleton {
 
-    private static final GameModeSingleton instance;
+	private static final GameModeSingleton instance;
 
+	private GameModeSingleton() {
+	}
 
-    private GameModeSingleton() {}
+	static {
+		try {
+			instance = new GameModeSingleton();
+		} catch (Exception ex) {
+			throw ex;
+		}
+	}
 
-    static {
-        try {
-            instance = new GameModeSingleton();
-        } catch (Exception ex) {
-            throw ex;
-        }
-    }
+	public static GameModeSingleton getInstance() {
+		return instance;
+	}
 
-    public static GameModeSingleton getInstance() {
-        return instance;
-    }
+	public IStrategy strategy = new EasyStrategy();
 
-    public IStrategy strategy = new EasyStrategy();
+	public IStrategy getStrategy() {
+		return strategy;
+	}
 
-    public IStrategy getStrategy() {
-        return strategy;
-    }
-
-    public void setStrategy(IStrategy s) {
-        strategy = s;
-    }
+	public void setStrategy(IStrategy s) {
+		strategy = s;
+	}
 }

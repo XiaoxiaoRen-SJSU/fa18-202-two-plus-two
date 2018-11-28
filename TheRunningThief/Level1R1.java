@@ -13,6 +13,7 @@ public class Level1R1 extends GamePage {
 	 * 
 	 */
 	private IStrategy strategy;
+
 	public Level1R1() {
 		super();
 	}

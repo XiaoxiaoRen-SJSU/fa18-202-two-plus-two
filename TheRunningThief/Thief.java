@@ -3,7 +3,7 @@ import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class ThiefRight here.
  * 
- * @author (your name)
+ * @author Xiaoxiao Ren, Modified by Yimu Yang
  * @version (a version number or a date) updated by Wenyan He on Nov 22, 2018 at
  *          6:00pm PST added isTouching( RotatingBomb.class ) block
  */
@@ -86,9 +86,13 @@ public class Thief extends Actor {
     // by actor
     private void checkButton() {
         if (isTouching(RedButton.class)) {
-            GreenfootSound redButtonMusic = new GreenfootSound("redbutton1.mp3");
-            redButtonMusic.play();
             Actor actor = getOneIntersectingObject(RedButton.class);
+            
+            if (!actor.isAtEdge()) {
+                GreenfootSound redButtonMusic = new GreenfootSound("redbutton2.mp3");
+                redButtonMusic.play();
+            }
+
             actor.setImage("whiteButton.png");
             actor.move(0);
         }
@@ -142,7 +146,7 @@ public class Thief extends Actor {
             }
         }
     }
-    
+
     // Create by Xiaoxiao Ren. Function to switch page.
     public void switchPage() {
         if (worldCtrl != null) {
@@ -152,7 +156,7 @@ public class Thief extends Actor {
                 nextWorld.prepare();
                 Greenfoot.setWorld(nextWorld);
             }
-        }   
+        }
     }
 
     // Create by Xiaoxiao Ren. Check if the thief get a diamond.
@@ -237,10 +241,10 @@ public class Thief extends Actor {
             while (System.currentTimeMillis() < curTime + 200)
                 ;
 
-            this.setImage("right.png");
+                this.setImage("right.png");
             this.setLocation(136, 630);
         }
-
+        // add by Yimu Yang
         if (isTouching(SwordDown.class)) {
             GreenfootSound touchObstacleMusic = new GreenfootSound("touchObstacle.wav");
             touchObstacleMusic.play();
@@ -302,7 +306,7 @@ public class Thief extends Actor {
             } else {
                 if (Greenfoot.isKeyDown("right")) {
                     // added by Wenyan He for state pattern implementation
-                    if (HSpeed < 0)  // thief now facing left, or in Left State
+                    if (HSpeed < 0) // thief now facing left, or in Left State
                         thiefState.toggleState(this);
                     setLocation(getX() + HSpeed, getY());
                 }
@@ -311,7 +315,7 @@ public class Thief extends Actor {
         } else {
             if (Greenfoot.isKeyDown("right")) {
                 // added by Wenyan He for state pattern implementation
-                if (HSpeed < 0)  // thief now facing left, or in Left State
+                if (HSpeed < 0) // thief now facing left, or in Left State
                     thiefState.toggleState(this);
                 setLocation(getX() + HSpeed, getY());
             }
@@ -319,9 +323,9 @@ public class Thief extends Actor {
 
         if (Greenfoot.isKeyDown("left")) {
             // added by Wenyan He for state pattern implementation
-            if (HSpeed > 0)  // thief now facing right, or in Right State
+            if (HSpeed > 0) // thief now facing right, or in Right State
                 thiefState.toggleState(this);
-            setLocation(getX() + HSpeed, getY());  // plus needs further check
+            setLocation(getX() + HSpeed, getY()); // plus needs further check
         }
 
         if (Greenfoot.isKeyDown("space")) {

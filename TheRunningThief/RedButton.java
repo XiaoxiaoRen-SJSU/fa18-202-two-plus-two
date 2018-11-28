@@ -7,7 +7,6 @@ import java.util.*;
  * @author Yimu Yang
  * @version (a version number or a date)
  */
-// Author: Yimu Yang
 public class RedButton extends Actor implements IButtonEventSubject {
 	boolean isDown;
 	private ArrayList<IButtonEventObserver> observers;
@@ -44,9 +43,16 @@ public class RedButton extends Actor implements IButtonEventSubject {
 	// function to move
 	@Override
 	public void move(int distance) {
-		notifyObservers();
+		turnDown();
 	}
 
+	// Trick Overriding, Pay Attention. In this way, the RedButton does not have
+	// function to be tested if it is at edge
+	@Override
+	public boolean isAtEdge() {
+	    return isDown;
+	}
+	
 	/**
 	 * Act - do whatever the RedButton wants to do. This method is called whenever
 	 * the 'Act' or 'Run' button gets pressed in the environment.
