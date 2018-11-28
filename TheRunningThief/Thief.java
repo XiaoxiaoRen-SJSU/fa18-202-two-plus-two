@@ -76,7 +76,9 @@ public class Thief extends Actor {
     private void checkKey() {
         if (isTouching(Key.class)) {
             GreenfootSound keyMusic = new GreenfootSound("key.wav");
+            GreenfootSound doorMusic = new GreenfootSound("door.mp3");
             keyMusic.play();
+            doorMusic.play();
             door.openDoor();
         }
         removeTouching(Key.class);
