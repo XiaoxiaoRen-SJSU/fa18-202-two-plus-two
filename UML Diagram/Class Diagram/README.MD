@@ -2,7 +2,7 @@
 
 Since the class diagram for the entire system is messy and all four levels of the game are in a similar format, it is easier to illustrate the game modeling by the class diagram of level 4.
 
-## Patterns Used
+## Patterns
 
 ### Observer Pattern
 Observer Pattern is used to implement the RedButton actor. When the Thief actor steps on the RedButton actor, the SwordDown actor and Key actor should begin falling.
@@ -19,7 +19,7 @@ State Pattern is used to implement two states of the Thief actor, which are movi
 ### Singleton Pattern
 Singleton Pattern is used to implement the Thief actor.
 
-## Important Class
+## Classes
 
 ### WorldController Class
 WorldController Class is a class to control the game flow. It keeps a reference of all gaming screens in its attributes.
