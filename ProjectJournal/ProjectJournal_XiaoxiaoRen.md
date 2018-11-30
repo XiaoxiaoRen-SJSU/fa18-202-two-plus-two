@@ -69,7 +69,7 @@
 
 * XP Core Value I keep:
 
-  **Feedback** : Provide feedback to each other about the difficulties of each level.
+  **Feedback** : Provide feedback to each other about the difficulties of each level.
 
 ## Week 4
 
@@ -85,4 +85,4 @@
 
 * XP Core Value I keep:
 
-  **Feedback** : Provide feedback to each other about UML diagrams and Ad video.
+  **Feedback** : Provide feedback to each other about UML diagrams and Ad video.
